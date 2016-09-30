@@ -1,0 +1,14 @@
+$config: (
+  color: blue,
+);
+
+$ui-config: (
+  color: #BADA55,
+  theme: map-get($themes, default),
+);
+
+$config: deep-map-merge($fs-config, $config);
+
+.my-color {
+  color: map-get($config, "color");
+}

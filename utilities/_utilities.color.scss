@@ -1,0 +1,48 @@
+/* ==========================================================================
+   #COLOR
+   ========================================================================== */
+
+// Basic Colors
+.u-color-white {
+  color: white !important;
+}
+.u-color-white-bg {
+  background-color: white !important;
+}
+
+.u-color-grey {
+  color: grey !important;
+}
+.u-color-grey-bg {
+  background-color: grey !important;
+}
+
+
+// Theme Colors
+.u-color-primary {
+  color: $color-primary !important;
+}
+
+.u-color-primary-bg {
+  background-color: $color-primary !important;
+}
+
+.u-color-secondary {
+  color: $color-secondary !important;
+}
+
+.u-color-secondary-bg {
+  background-color: $color-secondary !important;
+}
+
+.u-color-success {
+  color: $color-success !important;
+}
+
+.u-color-alert {
+  color: $color-alert !important;
+}
+
+.u-color-alert-bg {
+  color: $color-alert !important;
+}

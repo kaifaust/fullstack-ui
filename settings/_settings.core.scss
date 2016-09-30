@@ -1,0 +1,22 @@
+/* ==========================================================================
+   #CORE
+   ========================================================================== */
+
+$global-font-size:   16px;
+$global-line-height: 24px;
+
+$global-spacing-unit: round($global-line-height);
+
+$global-spacing-unit-factor-eighth:  0.125;
+$global-spacing-unit-factor-quarter: 0.25;
+$global-spacing-unit-factor-half:    0.5;
+$global-spacing-unit-factor-minus:   0.75;
+$global-spacing-unit-factor-plus:    1.5;
+$global-spacing-unit-factor-double:  2;
+
+$global-spacing-unit-eighth: round($global-spacing-unit * $global-spacing-unit-factor-eighth);
+$global-spacing-unit-quarter:  round($global-spacing-unit * $global-spacing-unit-factor-quarter);
+$global-spacing-unit-half: round($global-spacing-unit * $global-spacing-unit-factor-half);
+$global-spacing-unit-minus: round($global-spacing-unit * $global-spacing-unit-factor-minus);
+$global-spacing-unit-plus: round($global-spacing-unit * $global-spacing-unit-factor-plus);
+$global-spacing-unit-double: round($global-spacing-unit * $global-spacing-unit-factor-double);

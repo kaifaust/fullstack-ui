@@ -1,0 +1,64 @@
+/* ==========================================================================
+   #HEIGHTS
+   ========================================================================== */
+
+/**
+ * Viewport heights
+ * TODO: Combine widths, heights, into one file with more complete variants
+ */
+
+.u-vh {
+  height: 100vh !important;
+}
+
+.u-min-vh {
+  min-height: 100vh !important;
+}
+
+.u-max-vh {
+  max-height: 100vh !important;
+}
+
+
+
+
+
+/**
+ * Percentage-based heights based on InuitCSS Widths
+ */
+
+$fractions: 1 2 3 4 5;
+
+@mixin heights($rows, $breakpoint: null) {
+
+  @each $denominator in $rows {
+
+    @for $numerator from 1 through $denominator {
+
+      .u-height-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        width: ($numerator / $denominator) * 100% !important;
+      }
+
+      .u-min-height-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        min-width: ($numerator / $denominator) * 100% !important;
+      }
+
+      .u-max-height-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        max-width: ($numerator / $denominator) * 100% !important;
+      }
+
+    }
+
+  }
+
+}
+
+@include heights($fractions);
+
+@each $bp-name, $bp-value in $mq-breakpoints {
+
+  @include mq($from: $bp-name) {
+    @include heights($fractions, \@#{$bp-name});
+  }
+
+}

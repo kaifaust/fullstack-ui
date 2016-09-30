@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #FONT-SIZE
+   ========================================================================== */
+
+// Taken from InuitCSS
+
+@mixin font-size($font-size, $line-height: auto, $important: false) {
+
+  @if ($important == true) {
+    $important: !important;
+  } @else {
+    $important: null;
+  }
+
+  font-size: $font-size $important;
+  font-size: ($font-size / $global-font-size) * 1rem $important;
+
+  @if ($line-height == 'auto') {
+    line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size) $important;
+  }
+
+  @else {
+    line-height: $line-height $important;
+  }
+}

@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #INPUT
+   ========================================================================== */
+
+.o-input,
+%o-input {
+  padding: halve($global-spacing-unit);
+
+  &--eighth {
+    padding-top: halve($global-spacing-unit-eighth);
+    padding-bottom: halve($global-spacing-unit-eighth);
+  }
+
+  &--quarter {
+    padding-top: halve($global-spacing-unit-half);
+    padding-bottom: halve($global-spacing-unit-half);
+  }
+
+  &--half {
+    padding-top: halve($global-spacing-unit-half);
+    padding-bottom: halve($global-spacing-unit-half);
+  }
+
+  &--plus {
+    padding-top: halve($global-spacing-unit-plus);
+    padding-bottom: halve($global-spacing-unit-plus);
+  }
+
+  &--double {
+    padding-top: halve($global-spacing-unit-double);
+    padding-bottom: halve($global-spacing-unit-double);
+  }
+}

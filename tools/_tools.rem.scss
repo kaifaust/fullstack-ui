@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #REM
+   ========================================================================== */
+
+// Convert any px value into its rem equivalent.
+//
+// .simple-usage {
+//   margin: rem(10px);
+// }
+
+@function rem($pixel-value) {
+  @return $pixel-value / $global-font-size * 1rem;
+}
+
+
+// Mixin to create a declaration whose value is a rem unit with
+// pixel fallback.
+//
+// .simple-usage {
+//   @include rem(margin, 10px);
+// }
+
+@mixin rem($property, $value) {
+  #{$property}: $value;
+  #{$property}: rem($value);
+}

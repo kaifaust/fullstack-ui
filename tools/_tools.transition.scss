@@ -1,0 +1,14 @@
+/* ==========================================================================
+   #TRANSITION
+   ========================================================================== */
+
+// Convert any px value into its rem equivalent.
+//
+// .simple-usage {
+//   @include transition(all ease-out 1s)
+// }
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  transition: $args;
+}

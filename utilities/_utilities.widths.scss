@@ -1,0 +1,47 @@
+/* ==========================================================================
+   #WIDTHS
+   ========================================================================== */
+
+/**
+ * Widths based on InuitCSS
+ */
+
+$fractions: 1 2 3 4 5;
+
+@mixin widths($columns, $breakpoint: null) {
+
+  @each $denominator in $columns {
+
+    @for $numerator from 1 through $denominator {
+
+      .u-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        width: ($numerator / $denominator) * 100% !important;
+      }
+
+      .u-push-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        position: relative;
+        right: auto; /* [1] */
+        left: ($numerator / $denominator) * 100% !important;
+      }
+
+      .u-pull-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        position: relative;
+        right: ($numerator / $denominator) * 100% !important;
+        left: auto; /* [1] */
+      }
+
+    }
+
+  }
+
+}
+
+@include widths($fractions);
+
+@each $bp-name, $bp-value in $mq-breakpoints {
+
+  @include mq($from: $bp-name) {
+    @include widths($fractions, \@#{$bp-name});
+  }
+
+}

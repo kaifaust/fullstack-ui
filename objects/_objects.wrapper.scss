@@ -1,0 +1,59 @@
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+
+/*
+  Taken from InuitCSS
+*/
+
+/**
+ * Page-level constraining and wrapping elements.
+ */
+
+$wrapper-width: 960px;
+
+.o-wrapper {
+  @include clearfix();
+  padding-right: $global-spacing-unit;
+  padding-left:  $global-spacing-unit;
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: $wrapper-width;
+}
+
+
+
+
+
+/* Size variants.
+   ========================================================================== */
+
+.o-wrapper--eighth {
+  padding-right: $global-spacing-unit-eighth;
+  padding-left:  $global-spacing-unit-eighth;
+}
+
+.o-wrapper--quarter {
+  padding-right: $global-spacing-unit-quarter;
+  padding-left:  $global-spacing-unit-quarter;
+}
+
+.o-wrapper--half {
+  padding-right: $global-spacing-unit-half;
+  padding-left:  $global-spacing-unit-half;
+}
+
+.o-wrapper--minus {
+  padding-right: $global-spacing-unit-minus;
+  padding-left:  $global-spacing-unit-minus;
+}
+
+.o-wrapper--plus {
+  padding-right: $global-spacing-unit-plus;
+  padding-left:  $global-spacing-unit-plus;
+}
+
+.o-wrapper--double {
+  padding-right: $global-spacing-unit-double;
+  padding-left:  $global-spacing-unit-double;
+}

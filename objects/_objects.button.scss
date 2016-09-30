@@ -1,0 +1,246 @@
+/* ==========================================================================
+   #BUTTON
+   ========================================================================== */
+
+// Based on InuitCSS:
+// https://github.com/inuitcss/objects.buttons/blob/master/_objects.buttons.scss
+
+
+$btn-padding:             halve($global-spacing-unit);
+$btn-padding--quarter:    quarter($btn-padding);
+$btn-padding--half:       halve($btn-padding);
+$btn-padding--plus:       double($btn-padding);
+
+$btn-background:           $color-primary;
+$btn-color:                #FFFFFF;
+
+$btn-outline-background:   transparent;
+$btn-outline-color:        $color-primary;
+$btn-outline-border-width: 2px;
+
+$btn-border-width:         2px;
+$btn-border-style:         solid;
+$btn-border-color:         $btn-background;
+
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Fixes odd inner spacing in IE7.
+ * 7. Subtract the border size from the padding value so that buttons do not
+ *    grow larger as we add borders.
+ */
+
+.o-btn,
+%o-btn {
+  display: inline-block; /* [1] */
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin:  0; /* [4] */
+  cursor: pointer; /* [5] */
+  overflow: visible; /* [6] */
+  padding: $btn-padding - $btn-border-width  double($btn-padding) - $btn-border-width; /* [7] */
+  background-color: $btn-background;
+  outline: none;
+
+  @if($btn-border-width != 0) {
+    border: $btn-border-width $btn-border-style $btn-border-color;
+
+    &:focus {
+      border: $btn-border-width $btn-border-style $btn-border-color !important; /* [4] */
+    }
+
+  } @else {
+    border: none; /* [4] */
+  }
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none; /* [4] */
+    color: $btn-color;
+  }
+}
+
+/**
+* Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+*/
+.o-btn::-moz-focus-inner,
+%o-btn::-moz-focus-inner {
+  border:  0;
+  padding: 0;
+}
+
+
+.o-btn--round,
+%o-btn--round {
+  border-radius: $global-radius;
+}
+
+
+.o-btn--outline,
+%o-btn--outline {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: $btn-outline-background;
+    color: $btn-outline-color;
+    border-width: $btn-outline-border-width !important;
+  }
+}
+
+
+.o-btn--neutral,
+%o-btn--neutral {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: transparent;
+    color: $color-text-black !important;
+    border-color: $color-line-base !important;
+    border-width: $btn-outline-border-width !important;
+  }
+}
+
+
+.o-btn--quarter,
+%o-btn--quarter {
+  padding: $btn-padding--quarter - $btn-border-width double($btn-padding--quarter) - $btn-border-width; /* [7] */
+}
+
+
+.o-btn--half,
+%o-btn--half {
+  padding: $btn-padding--half - $btn-border-width double($btn-padding--half) - $btn-border-width; /* [7] */
+}
+
+
+.o-btn--plus,
+%o-btn--plus {
+  padding: $btn-padding--plus - $btn-border-width double($btn-padding--plus) - $btn-border-width; /* [7] */
+}
+
+
+.o-btn--full,
+%o-btn--full {
+  width: 100%;
+}
+
+
+/**
+ * Round-ended buttons
+ *
+ * 1. Overly-large value to ensure the radius rounds the whole end of the
+ *    button.
+ */
+
+.o-btn--pill,
+%o-btn--pill {
+  border-radius: 100px; /* [1] */
+}
+
+.o-btn--elevate,
+%o-btn--elevate {
+  @include elevation(
+    $elevation: 1,
+    $transition: box-shadow ease $global-transition-fast
+  );
+
+  &:focus,
+  &:hover {
+    @include elevation(
+      $elevation: 2,
+      $transition: box-shadow ease $global-transition-fast,
+      $important: true
+    );
+  }
+
+  &:active {
+    @include elevation(
+      $elevation: 3,
+      $transition: box-shadow ease $global-transition-fast,
+      $important: true
+    );
+  }
+}
+
+.o-btn--elevate\@hover,
+%o-btn--elevate\@hover {
+  &:focus,
+  &:hover {
+    @include elevation(
+      $elevation: 2,
+      $transition: box-shadow ease $global-transition-fast,
+      $important: true
+    );
+  }
+
+  &:active {
+    @include elevation(
+      $elevation: 3,
+      $transition: box-shadow ease $global-transition-fast,
+      $important: true
+    );
+  }
+}
+
+.o-btn--elevate\@active,
+%o-btn--elevate\@active {
+  &:active {
+    @include elevation(
+      $elevation: 2,
+      $transition: box-shadow ease $global-transition-fast,
+      $important: true
+    );
+  }
+}
+
+
+.o-btn--uppercase,
+%o-btn--uppercase {
+  @include label();
+}
+
+.o-btn--alert,
+%o-btn--alert {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: $color-alert;
+    border-color: $color-alert !important;
+    color: white;
+  }
+}
+
+.o-btn--transparent,
+%o-btn--transparent {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: transparent;
+    border-color: transparent !important;
+    color: $color-text-black;
+  }
+}
+
+.o-btn--white,
+%o-btn--white {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: white;
+    border-color: transparent !important;
+    color: $color-text-black;
+  }
+}

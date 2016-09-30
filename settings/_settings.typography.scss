@@ -1,0 +1,128 @@
+/* ==========================================================================
+   #TYPOGRAPHY
+   ========================================================================== */
+
+// Roboto
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900';
+
+$global-font-family: 'Roboto';
+
+$global-font-size-h1: 36px;
+$global-font-size-h2: 28px;
+$global-font-size-h3: 24px;
+$global-font-size-h4: 20px;
+$global-font-size-h5: 18px;
+$global-font-size-h6: 16px;
+
+$global-font-size-small: 13px;
+$global-font-size-tiny:  12px;
+$global-font-size-micro: 9px;
+
+
+$theme: (
+  "typography": (
+    "primary": (
+      "font-family": "Roboto",
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"
+    ),
+    "secondary": (
+      "font-family": "Roboto Mono",
+      "url": ""
+    ),
+    "styles": (
+      "display-4": (
+        "font-size":      112px,
+        "font-weight":    300,
+        "line-height":    1,
+        "letter-spacing": -0.04em,
+        "opacity":        0.54
+      ),
+      "display-3": (
+        "font-size":      56px,
+        "font-weight":    400,
+        "line-height":    1.35,
+        "letter-spacing": -0.02em,
+        "opacity":        0.54
+      ),
+      "display-2": (
+        "font-size":      45px,
+        "font-weight":    400,
+        "line-height":    48px,
+        "letter-spacing": 0,
+        "opacity":        0.54
+      ),
+      "display-1": (
+        "font-size":      34px,
+        "font-weight":    400,
+        "line-height":    40px,
+        "letter-spacing": 0,
+        "opacity":        0.54
+      ),
+      "headline": (
+        "font-size":      24px,
+        "font-weight":    400,
+        "line-height":    32px,
+        "letter-spacing": 0,
+        "opacity":        0.87
+      ),
+      "title": (
+        "font-size":      20px,
+        "font-weight":    400,
+        "line-height":    1,
+        "letter-spacing": 0.02em,
+        "opacity":        0.87
+      ),
+      "subheading": (
+        "font-size":      16px,
+        "font-weight":    400,
+        "line-height":    24px,
+        "letter-spacing": 0.04em,
+        "opacity":        0.87
+      ),
+      "body-2": (
+        "font-size":      14px,
+        "font-weight":    500,
+        "line-height":    24px,
+        "letter-spacing": 0,
+        "opacity":        0.87
+      ),
+      "body-1": (
+        "font-size":      14px,
+        "font-weight":    400,
+        "line-height":    24px,
+        "letter-spacing": 0,
+        "opacity":        0.87
+      ),
+      "button": (
+        "font-size":      14px,
+        "font-weight":    500,
+        "line-height":    1,
+        "letter-spacing": 0,
+        "opacity":        0.87,
+        "text-transform": uppercase
+      ),
+      "caption": (
+        "font-size":      12px,
+        "font-weight":    400,
+        "line-height":    1,
+        "letter-spacing": 0,
+        "opacity":        0.54
+      ),
+      "blockquote": (
+        "font-size":      24px,
+        "font-weight":    300,
+        "line-height":    1,
+        "letter-spacing": 0.08em,
+        "opacity":        0.54,
+        "font-style":     italic
+      ),
+      "menu": (
+        "font-size":      14px,
+        "font-weight":    500,
+        "line-height":    1,
+        "letter-spacing": 0,
+        "opacity":        0.87
+      )
+    )
+  )
+);

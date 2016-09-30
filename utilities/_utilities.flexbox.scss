@@ -1,0 +1,96 @@
+/* ==========================================================================
+   #FLEXBOX
+   ========================================================================== */
+
+/*
+  Generates classes like
+    .u-fass {}
+    .u-fais@desktop {}
+
+  CONTENT:
+  Alignment Self
+  Alignment Items
+  Alignment Content
+  Justify Content
+  Flex Wrap
+  Flex Direction
+  Flex Grow
+  Flex Shrink
+  Flex Basis
+  Inline Flex
+*/
+
+$flex-utilities: (
+  'fasa'  : (align-self, auto),
+  'fass'  : (align-self, flex-start),
+  'fasc'  : (align-self, center),
+  'fase'  : (align-self, flex-end),
+  'fasb'  : (align-self, baseline),
+  'fasstr': (align-self, stretch),
+
+  'fais'  : (align-items, flex-start),
+  'faic'  : (align-items, center),
+  'faie'  : (align-items, flex-end),
+  'faib'  : (align-items, baseline),
+  'faistr': (align-items, stretch),
+
+  'facs'  : (align-content, flex-start),
+  'facc'  : (align-content, center),
+  'face'  : (align-content, flex-end),
+  'facsb' : (align-content, space-between),
+  'facsa' : (align-content, space-around),
+  'facstr': (align-content, stretch),
+
+  'fjs'   : (justify-content, flex-start),
+  'fjc'   : (justify-content, center),
+  'fje'   : (justify-content, flex-end),
+  'fjsb'  : (justify-content, space-between),
+  'fjsa'  : (justify-content, space-around),
+
+  'fwn'   : (flex-wrap, no-wrap),
+  'fw'    : (flex-wrap, wrap),
+  'fwr'   : (flex-wrap, wrap-reverse),
+
+  'fdr'   : (flex-direction, row),
+  'fdrr'  : (flex-direction, row-reverse),
+  'fdc'   : (flex-direction, column),
+  'fdcr'  : (flex-direction, column-reverse),
+
+  'fg'    : (flex-grow, 1),
+  'fg0'   : (flex-grow, 0),
+
+  'fs'    : (flex-shrink, 1),
+  'fs0'   : (flex-shrink, 0),
+
+  'fba'   : (flex-basis, auto),
+  'fb0'   : (flex-basis, 0),
+  'fb'    : (flex-basis, 100%),
+);
+
+@mixin flex-utils($breakpoint: null) {
+
+  @each $class, $value-map in $flex-utilities {
+
+    $declaration: nth($value-map, 1);
+    $declaration-value: nth($value-map, 2);
+
+    .u-#{$class}#{$breakpoint} {
+      #{$declaration}: #{$declaration-value} !important;
+    }
+
+  }
+
+}
+
+@include flex-utils();
+
+// Responsive variants
+@each $bp-name,
+      $bp-value
+      in $mq-breakpoints {
+
+  @include mq($from: $bp-name) {
+    @include flex-utils($breakpoint: \@#{$bp-name});
+  }
+
+}

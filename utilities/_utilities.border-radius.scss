@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #BORDER-RADIUS
+   ========================================================================== */
+
+.u-round {
+  border-radius: $global-radius !important;
+}
+
+.u-round-tiny {
+  border-radius: $global-radius-tiny !important;
+}
+
+.u-round-small {
+  border-radius: $global-radius-small !important;
+}
+
+.u-round-large {
+  border-radius: $global-radius-large !important;
+}
+
+.u-round-huge {
+  border-radius: $global-radius-huge !important;
+}
+
+.u-round-full {
+  border-radius: $global-radius-full !important;
+}

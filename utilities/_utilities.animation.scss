@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #ANIMATION
+   ========================================================================== */
+
+/*
+  See Saffron, a simple Sass mixin library for animations and transitions.
+  https://github.com/colindresj/saffron
+*/
+
+
+/*
+  Entrances
+*/
+.u-pop-in-fast {
+  @include popIn($global-transition-fast);
+}
+.u-fade-in-fast {
+  @include fadeIn($global-transition-fast);
+}
+.u-fade-in-up {
+  @include fadeInUp($global-transition);
+}
+.u-fade-in-up-fast {
+  @include fadeInUp($global-transition-fast);
+}
+.u-fade-in-left-fast {
+  @include fadeInLeft($global-transition-fast);
+}
+.u-fade-in-right-fast {
+  @include fadeInRight($global-transition-fast);
+}
+
+
+.u-exit-explode {
+  @include explode;
+}

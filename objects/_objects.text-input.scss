@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #TEXT-INPUT
+   ========================================================================== */
+
+.o-text-input,
+%o-text-input {
+  @extend %o-input;
+  @include transition(box-shadow $global-transition-fast);
+
+  width: 100%;
+  background-color: white;
+
+  box-shadow: inset 0 0 0 1px $color-input-border-base;
+  &:hover {
+    box-shadow: inset 0 0 0 1px $color-input-border-hover;
+  }
+  &:focus {
+    box-shadow: inset 0 0 0 2px $color-input-border-focus;
+  }
+}

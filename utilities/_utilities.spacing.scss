@@ -1,0 +1,90 @@
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+
+/**
+ * Generates classes like
+ *
+ *   .u-mt-half@mobile {}
+ *   .u-mt@tablet {}
+ *   .u-mh-double@wide {}
+ *   .u-p-none {}
+ */
+
+$spacing-types: (
+ 'p': 'padding',
+ 'm': 'margin'
+);
+
+$spacing-sizes: (
+  null: rem($global-spacing-unit),
+  '-eighth': rem($global-spacing-unit-eighth),
+  '-quarter': rem($global-spacing-unit-quarter),
+  '-half': rem($global-spacing-unit-half),
+  '-minus': rem($global-spacing-unit-minus),
+  '-plus': rem($global-spacing-unit-plus),
+  '-double': rem($global-spacing-unit-double),
+  '-none': 0,
+  '-auto': auto,
+);
+
+$spacing-directions: (
+  '': null,
+  't': '-top',
+  'r': '-right',
+  'b': '-bottom',
+  'l': '-left',
+  'v': (
+    '-top',
+    '-bottom'
+  ),
+  'h': (
+    '-right',
+    '-left'
+  )
+);
+
+
+@mixin spacing-utils($breakpoint: null) {
+
+  @each $type-name,
+        $type-value
+        in $spacing-types {
+
+    @each $direction-name,
+          $direction-values
+          in $spacing-directions {
+
+      @each $size-name,
+            $size-value
+            in $spacing-sizes {
+
+        @each $direction-value
+              in $direction-values {
+
+          .u-#{$type-name}#{$direction-name}#{$size-name}#{$breakpoint} {
+            #{$type-value}#{$direction-value}: #{$size-value} !important;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+};
+
+@include spacing-utils();
+
+// Responsive variants
+@each $bp-name,
+      $bp-value
+      in $mq-breakpoints {
+
+  @include mq($from: $bp-name) {
+    @include spacing-utils($breakpoint: \@#{$bp-name});
+  }
+
+}

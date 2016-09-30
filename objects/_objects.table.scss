@@ -1,0 +1,124 @@
+/* ==========================================================================
+   #TABLE
+   ========================================================================== */
+
+.o-table,
+%o-table {
+
+  &--fixed {
+    table-layout: fixed;
+  }
+
+  tr {
+    border-bottom: 1px solid $color-grey-300;
+
+    @at-root .o-table thead tr {
+      border-bottom: 1px solid $color-grey-400;
+      background-color: white;
+    }
+  }
+
+  th {
+    @include label();
+
+    @at-root .o-table--middle th {
+      vertical-align: middle;
+    }
+  }
+
+  td {
+    @at-root .o-table--middle td {
+      vertical-align: middle;
+    }
+  }
+}
+
+/*
+  General padding variants
+*/
+.o-table--comfortable th {
+  padding: $global-spacing-unit-half $global-spacing-unit;
+}
+.o-table--cozy th {
+  padding: $global-spacing-unit-half $global-spacing-unit-half;
+}
+.o-table--compact th {
+  padding: $global-spacing-unit-eighth $global-spacing-unit-half;
+}
+
+/*
+  Column padding variants
+*/
+.o-table--comfortable-columns th {
+  padding-left: $global-spacing-unit;
+  padding-right: $global-spacing-unit;
+}
+.o-table--cozy-columns th {
+  padding-left: $global-spacing-unit-half;
+  padding-right: $global-spacing-unit-half;
+}
+.o-table--compact-columns th {
+  padding-left: $global-spacing-unit-half;
+  padding-right: $global-spacing-unit-half;
+}
+
+/*
+  Row padding variants
+*/
+.o-table--comfortable-rows th {
+  padding-top: $global-spacing-unit;
+  padding-bottom: $global-spacing-unit;
+}
+.o-table--cozy-rows th {
+  padding-top: $global-spacing-unit-half;
+  padding-bottom: $global-spacing-unit-half;
+}
+.o-table--compact-rows th {
+  padding-top: $global-spacing-unit-half;
+  padding-bottom: $global-spacing-unit-half;
+}
+
+/*
+  General padding variants
+*/
+.o-table--comfortable td {
+  padding: $global-spacing-unit-half $global-spacing-unit;
+}
+.o-table--cozy td {
+  padding: $global-spacing-unit-half $global-spacing-unit-half;
+}
+.o-table--compact td {
+  padding: $global-spacing-unit-eighth $global-spacing-unit-half;
+}
+
+/*
+  Column padding variants
+*/
+.o-table--comfortable-columns td {
+  padding-left: $global-spacing-unit;
+  padding-right: $global-spacing-unit;
+}
+.o-table--cozy-columns td {
+  padding-left: $global-spacing-unit-half;
+  padding-right: $global-spacing-unit-half;
+}
+.o-table--compact-columns td {
+  padding-left: $global-spacing-unit-half;
+  padding-right: $global-spacing-unit-half;
+}
+
+/*
+  Row padding variants
+*/
+.o-table--comfortable-rows td {
+  padding-top: $global-spacing-unit;
+  padding-bottom: $global-spacing-unit;
+}
+.o-table--cozy-rows td {
+  padding-top: $global-spacing-unit-half;
+  padding-bottom: $global-spacing-unit-half;
+}
+.o-table--compact-rows td {
+  padding-top: $global-spacing-unit-half;
+  padding-bottom: $global-spacing-unit-half;
+}

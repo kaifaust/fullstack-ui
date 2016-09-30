@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #HIGHLIGHT
+   ========================================================================== */
+
+@mixin highlight-even {
+  & > *:nth-child(2n+2) {
+    background: $color-grey-50;
+  }
+}
+
+@mixin highlight-odd {
+  & > *:nth-child(2n+1) {
+    background: $color-grey-50;
+  }
+}

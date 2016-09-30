@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #SHADOW-BORDER
+   ========================================================================== */
+
+/*
+  When we want a border, but not the added mass, we use box-shadow
+
+  TODO: Allow for multiple sides at once
+*/
+
+.u-shadow-border {
+  @include shadow-border();
+}
+
+.u-shadow-border-top {
+  @include shadow-border(top);
+}
+
+.u-shadow-border-right {
+  @include shadow-border(right);
+}
+
+.u-shadow-border-bottom {
+  @include shadow-border(bottom);
+}
+
+.u-shadow-border-left {
+  @include shadow-border(left);
+}

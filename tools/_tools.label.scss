@@ -1,0 +1,10 @@
+/* ==========================================================================
+   #LABEL
+   ========================================================================== */
+
+@mixin label() {
+  @include font-size($global-font-size-small);
+  letter-spacing: rem(0.75px);
+  font-weight: 700;
+  text-transform: uppercase;
+}

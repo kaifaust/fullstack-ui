@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #FONT-SIZE
+   ========================================================================== */
+
+.u-base {
+  @include font-size($global-font-size, $important: true);
+}
+
+.u-small {
+  @include font-size($global-font-size-small, $important: true);
+}
+
+.u-tiny {
+  @include font-size($global-font-size-tiny, $important: true);
+}
+
+.u-micro {
+  @include font-size($global-font-size-micro, $important: true);
+}
+
+.u-h1 {
+  @include font-size($global-font-size-h1, $important: true);
+}
+
+.u-h2 {
+  @include font-size($global-font-size-h2, $important: true);
+}
+
+.u-h3 {
+  @include font-size($global-font-size-h3, $important: true);
+}
+
+.u-h4 {
+  @include font-size($global-font-size-h4, $important: true);
+}
+
+.u-h5 {
+  @include font-size($global-font-size-h5, $important: true);
+}
+
+.u-h6 {
+  @include font-size($global-font-size-h6, $important: true);
+}
