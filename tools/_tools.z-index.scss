@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #Z-INDEX
+   ========================================================================== */
+
+@function get-z-index($name) {
+  @if map-has-key($z-index, $name) {
+    @return map-get($z-index, $name);
+  }
+
+  @error "z-index `#{$name}` wasn't found in $global-z-index: \
+    #{inspect($global-z-index)}";
+}
+
+@mixin set-z-index($name, $value) {
+  $new-z-index: ($name: $value);
+  $global-z-index: map-merge($global-z-index, $new-z-index) !global;
+}

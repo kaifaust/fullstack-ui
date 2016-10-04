@@ -33,92 +33,47 @@
   }
 }
 
-/*
-  General padding variants
-*/
-.o-table--comfortable th {
-  padding: $global-spacing-unit-half $global-spacing-unit;
-}
-.o-table--cozy th {
-  padding: $global-spacing-unit-half $global-spacing-unit-half;
-}
-.o-table--compact th {
-  padding: $global-spacing-unit-eighth $global-spacing-unit-half;
-}
-
-/*
-  Column padding variants
-*/
-.o-table--comfortable-columns th {
-  padding-left: $global-spacing-unit;
-  padding-right: $global-spacing-unit;
-}
-.o-table--cozy-columns th {
-  padding-left: $global-spacing-unit-half;
-  padding-right: $global-spacing-unit-half;
-}
-.o-table--compact-columns th {
-  padding-left: $global-spacing-unit-half;
-  padding-right: $global-spacing-unit-half;
-}
-
-/*
-  Row padding variants
-*/
-.o-table--comfortable-rows th {
-  padding-top: $global-spacing-unit;
-  padding-bottom: $global-spacing-unit;
-}
-.o-table--cozy-rows th {
-  padding-top: $global-spacing-unit-half;
-  padding-bottom: $global-spacing-unit-half;
-}
-.o-table--compact-rows th {
-  padding-top: $global-spacing-unit-half;
-  padding-bottom: $global-spacing-unit-half;
-}
-
-/*
-  General padding variants
-*/
+/* Padding variants */
+.o-table--comfortable th,
 .o-table--comfortable td {
-  padding: $global-spacing-unit-half $global-spacing-unit;
+  @include padding-vertical(small);
+  @include padding-horizontal;
 }
+.o-table--cozy th,
 .o-table--cozy td {
-  padding: $global-spacing-unit-half $global-spacing-unit-half;
+  @include padding-vertical(tiny);
+  @include padding-horizontal(small);
 }
+.o-table--compact th,
 .o-table--compact td {
-  padding: $global-spacing-unit-eighth $global-spacing-unit-half;
+  @include padding-vertical(nano);
+  @include padding-horizontal(micro);
 }
 
-/*
-  Column padding variants
-*/
+/* Column padding variants */
+.o-table--comfortable-columns th,
 .o-table--comfortable-columns td {
-  padding-left: $global-spacing-unit;
-  padding-right: $global-spacing-unit;
+  @include padding-horizontal;
 }
+.o-table--cozy-columns th,
 .o-table--cozy-columns td {
-  padding-left: $global-spacing-unit-half;
-  padding-right: $global-spacing-unit-half;
+  @include padding-horizontal(small);
 }
+.o-table--compact-columns th,
 .o-table--compact-columns td {
-  padding-left: $global-spacing-unit-half;
-  padding-right: $global-spacing-unit-half;
+  @include padding-horizontal(tiny);
 }
 
-/*
-  Row padding variants
-*/
+/* Row padding variants */
+.o-table--comfortable-rows th,
 .o-table--comfortable-rows td {
-  padding-top: $global-spacing-unit;
-  padding-bottom: $global-spacing-unit;
+  @include padding-vertical;
 }
+.o-table--cozy-rows th
 .o-table--cozy-rows td {
-  padding-top: $global-spacing-unit-half;
-  padding-bottom: $global-spacing-unit-half;
+  @include padding-horizontal(small);
 }
+.o-table--compact-rows th,
 .o-table--compact-rows td {
-  padding-top: $global-spacing-unit-half;
-  padding-bottom: $global-spacing-unit-half;
+  @include padding-horizontal(tiny);
 }

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+
+/* BOX MODEL PROPERTIES */
+
+$global-box-props: (
+  "margin",
+  "margin-top",
+  "margin-right",
+  "margin-bottom",
+  "margin-left",
+  "padding",
+  "padding-top",
+  "padding-right",
+  "padding-bottom",
+  "padding-left"
+);
+
+$global-box-directions: (
+  null: null,
+  "top": "-top",
+  "right": "-right",
+  "bottom": "-bottom",
+  "left": "-left",
+  "vertical": (
+    "-top",
+    "-bottom"
+  ),
+  "horizontal": (
+    "-right",
+    "-left"
+  )
+);
+
+@function is-box-prop($arg) {
+  @each $prop in $global-box-props {
+    @if $arg == $prop {
+      @return true;
+    }
+  }
+  @return false;
+}
+
+@function get-box-prop($name) {
+  @if map-has-key($global-box-props, $name) {
+    @return map-get($global-box-props, $name);
+  }
+  @error "Box property `#{$name}` wasn't found in \
+    $global-box-props: #{inspect($global-box-props)}";
+}
+
+
+
+
+
+/* SPACING UNITS */
+
+@mixin set-spacing-unit($spacing-name, $spacing-value) {
+  $new-spacing-unit: ($spacing-name: $spacing-value);
+  $global-spacing-units: map-merge($global-spacing-units, $new-spacing-unit) !global;
+}
+
+@function get-spacing-unit($name: null) {
+   @if map-has-key($global-spacing-units, $name) {
+     @return map-get($global-spacing-units, $name);
+   }
+   @error "Spacing unit `#{$name}` wasn't found in \
+     $global-spacing-units: #{inspect($global-spacing-units)}";
+}
+
+@function is-spacing-unit($arg) {
+  @each $name, $value in $global-spacing-units {
+    @if $arg == $name {
+      @return true;
+    }
+  }
+  @return false;
+}
+
+@mixin spacing($box-prop: null, $spacing-unit: null) {
+  @if is-box-prop($box-prop) {
+  @if is-spacing-unit($spacing-unit) {
+    #{$box-prop}: get-spacing-unit($spacing-unit);
+      } @elseif type-of($spacing-unit) == "number" {
+    #{$box-prop}: $spacing-unit;
+  } @else {
+    @error "Spacing unit `#{$spacing-unit}` wasn't found in \
+    $global-spacing-units, nor was it a valid unit";
+  }
+  } @else {
+    @error "Box property `#{$box-prop}` wasn't found in \
+      $global-box-props: #{inspect($global-box-props)}";
+  }
+};
+
+@mixin margin($spacing: null) {
+  @include spacing(margin, $spacing);
+};
+
+@mixin margin-vertical($spacing: null) {
+  @include spacing(margin-top, $spacing);
+  @include spacing(margin-bottom, $spacing);
+};
+
+@mixin margin-horizontal($spacing: null) {
+  @include spacing(margin-left, $spacing);
+  @include spacing(margin-right, $spacing);
+};
+
+@mixin margin-top($spacing: null) {
+  @include spacing(margin-top, $spacing);
+};
+
+@mixin margin-right($spacing: null) {
+  @include spacing(margin-right, $spacing);
+};
+
+@mixin margin-bottom($spacing: null) {
+  @include spacing(margin-bottom, $spacing);
+};
+
+@mixin margin-left($spacing: null) {
+  @include spacing(margin-left, $spacing);
+};
+
+@mixin padding($spacing: null) {
+  @include spacing(padding, $spacing);
+};
+
+@mixin padding-vertical($spacing: null) {
+  @include spacing(padding-top, $spacing);
+  @include spacing(padding-bottom, $spacing);
+};
+
+@mixin padding-horizontal($spacing: null) {
+  @include spacing(padding-left, $spacing);
+  @include spacing(padding-right, $spacing);
+};
+
+@mixin padding-top($spacing: null) {
+  @include spacing(padding-top, $spacing);
+};
+
+@mixin padding-right($spacing: null) {
+  @include spacing(padding-right, $spacing);
+};
+
+@mixin padding-bottom($spacing: null) {
+  @include spacing(padding-bottom, $spacing);
+};
+
+@mixin padding-left($spacing: null) {
+  @include spacing(padding-left, $spacing);
+};

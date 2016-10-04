@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #COLOR
+   ========================================================================== */
+
+@function get-color($arg: null) {
+  @if map-has-key($global-color-palette, $arg) {
+    @return map-get($global-color-palette, $arg);
+  }
+  @error "Color `#{$arg}` wasn't found in \
+    $global-color-palette: #{inspect($global-color-palette)}";
+}
+
+@function is-color($arg) {
+  @each $color, $value in $global-color-palette {
+    @if $arg == $color {
+      @return true;
+    }
+  }
+  @return false;
+}
+
+@mixin set-color($color-name, $rgb) {
+  $new-color: ($color-name: $rgb);
+  $global-color-palette: map-merge($global-color-palette, $color) !global;
+}

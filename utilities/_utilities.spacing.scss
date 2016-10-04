@@ -5,86 +5,42 @@
 /**
  * Generates classes like
  *
- *   .u-mt-half@mobile {}
- *   .u-mt@tablet {}
- *   .u-mh-double@wide {}
- *   .u-p-none {}
+ *   .u-margin-small@mobile {}
+ *   .u-margin-top-large@tablet {}
+ *   .u-margin-horizontal-micro {}
+ *   .u-padding-none {}
  */
 
-$spacing-types: (
- 'p': 'padding',
- 'm': 'margin'
-);
+$build-responsive-spacing-variants: true !default;
 
-$spacing-sizes: (
-  null: rem($global-spacing-unit),
-  '-eighth': rem($global-spacing-unit-eighth),
-  '-quarter': rem($global-spacing-unit-quarter),
-  '-half': rem($global-spacing-unit-half),
-  '-minus': rem($global-spacing-unit-minus),
-  '-plus': rem($global-spacing-unit-plus),
-  '-double': rem($global-spacing-unit-double),
-  '-none': 0,
-  '-auto': auto,
-);
-
-$spacing-directions: (
-  '': null,
-  't': '-top',
-  'r': '-right',
-  'b': '-bottom',
-  'l': '-left',
-  'v': (
-    '-top',
-    '-bottom'
-  ),
-  'h': (
-    '-right',
-    '-left'
-  )
-);
-
-
-@mixin spacing-utils($breakpoint: null) {
-
-  @each $type-name,
-        $type-value
-        in $spacing-types {
-
-    @each $direction-name,
-          $direction-values
-          in $spacing-directions {
-
-      @each $size-name,
-            $size-value
-            in $spacing-sizes {
-
-        @each $direction-value
-              in $direction-values {
-
-          .u-#{$type-name}#{$direction-name}#{$size-name}#{$breakpoint} {
-            #{$type-value}#{$direction-value}: #{$size-value} !important;
-          }
-
-        }
-
+@mixin build-spacing-classes($breakpoint: null) {
+  @each $box-prop in "margin", "padding" {
+    @each $direction-name, $direction-values in $global-box-directions {
+      @if $direction-name != null {
+        $direction-name: unquote("-#{$direction-name}");
       }
 
+      @each $spacing-name, $spacing-value in $global-spacing-units {
+        @if $spacing-name != null {
+          $spacing-name: unquote("-#{$spacing-name}");
+        }
+
+        @each $direction-value in $direction-values {
+          .u-#{$box-prop}#{$direction-name}#{$spacing-name}#{$breakpoint} {
+            #{$box-prop}#{$direction-value}: em($spacing-value) !important;
+          }
+        }
+      }
     }
-
   }
-
 };
 
-@include spacing-utils();
+@include build-spacing-classes;
 
-// Responsive variants
-@each $bp-name,
-      $bp-value
-      in $mq-breakpoints {
-
-  @include mq($from: $bp-name) {
-    @include spacing-utils($breakpoint: \@#{$bp-name});
+@if $build-responsive-spacing-variants == true {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($from: $bp-name) {
+      @include build-spacing-classes($breakpoint: \@#{$bp-name});
+    }
   }
-
 }

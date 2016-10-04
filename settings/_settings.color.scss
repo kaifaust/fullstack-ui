@@ -2,22 +2,26 @@
    #COLOR
    ========================================================================== */
 
-$color-primary: #00A8F7;
-$color-secondary: #273144;
+$global-palette: $google-material-palette !default;
 
-$color-success: rgb(120,163,0);
-$color-alert: rgb(244,67,54);
+$color-primary: #00A8F7 !default;
+$color-secondary: #273144 !default;
 
-$color-text-grey: rgb(66,66,66);
-$color-text-black: rgb(33,33,33);
+$color-success: get-color("green-500")  !default;
+$color-alert: rgb(244,67,54) !default;
 
-$color-background-base: transparent;
+$color-text-grey: rgb(66,66,66) !default;
+$color-text-black: rgb(33,33,33) !default;
 
-$color-input-border-base: rgb(211,211,211);
-$color-input-border-hover: darken($color-input-border-base, 25%);
-$color-input-border-focus: darken($color-primary, 5%);
+$color-background-base: transparent !default;
 
-$color-line-base: rgb(211,211,211);
+$color-text-muted: rgba(0, 0, 0, 0.54) !default;
+
+$color-input-border-base: rgb(211,211,211) !default;
+$color-input-border-hover: darken($color-input-border-base, 25%) !default;
+$color-input-border-focus: darken($color-primary, 5%) !default;
+
+$color-line-base: rgb(211,211,211) !default;
 
 $color-grey-50:  #FAFAFA;
 $color-grey-100: #F5F5F5;

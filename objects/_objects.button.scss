@@ -6,10 +6,10 @@
 // https://github.com/inuitcss/objects.buttons/blob/master/_objects.buttons.scss
 
 
-$btn-padding:             halve($global-spacing-unit);
-$btn-padding--quarter:    quarter($btn-padding);
-$btn-padding--half:       halve($btn-padding);
-$btn-padding--plus:       double($btn-padding);
+$btn-padding:             halve(get-spacing-unit());
+$btn-padding--micro:      quarter($btn-padding);
+$btn-padding--tiny:       halve($btn-padding);
+$btn-padding--large:      double($btn-padding);
 
 $btn-background:           $color-primary;
 $btn-color:                #FFFFFF;
@@ -96,6 +96,18 @@ $btn-border-color:         $btn-background;
   }
 }
 
+.o-btn--outline-white,
+%o-btn--outline-white {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+    border-color: white !important;
+    border-width: $btn-outline-border-width !important;
+  }
+}
+
 
 .o-btn--neutral,
 %o-btn--neutral {
@@ -111,21 +123,21 @@ $btn-border-color:         $btn-background;
 }
 
 
-.o-btn--quarter,
-%o-btn--quarter {
-  padding: $btn-padding--quarter - $btn-border-width double($btn-padding--quarter) - $btn-border-width; /* [7] */
+.o-btn--micro,
+%o-btn--micro {
+  padding: $btn-padding--micro - $btn-border-width double($btn-padding--micro) - $btn-border-width; /* [7] */
 }
 
 
-.o-btn--half,
-%o-btn--half {
-  padding: $btn-padding--half - $btn-border-width double($btn-padding--half) - $btn-border-width; /* [7] */
+.o-btn--tiny,
+%o-btn--tiny {
+  padding: $btn-padding--tiny - $btn-border-width double($btn-padding--tiny) - $btn-border-width; /* [7] */
 }
 
 
-.o-btn--plus,
-%o-btn--plus {
-  padding: $btn-padding--plus - $btn-border-width double($btn-padding--plus) - $btn-border-width; /* [7] */
+.o-btn--large,
+%o-btn--large {
+  padding: $btn-padding--large - $btn-border-width double($btn-padding--large) - $btn-border-width; /* [7] */
 }
 
 

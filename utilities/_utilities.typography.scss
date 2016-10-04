@@ -5,16 +5,74 @@
 .u-text-right {
   text-align: right !important;
 }
+
 .u-text-left {
   text-align: left !important;
 }
+
 .u-text-center {
   text-align: center !important;
 }
 
 
-// Vertical Align Middle
-// Good for situations like aligning text with buttons
-.u-middle {
-  vertical-align: middle !important;
+
+
+
+/* Vertical Alignment
+
+  NOTE: This property does not allow you to "vertically center" an element
+  within another element. Flexbox is more of the proper tool there.
+*/
+
+$vertical-align-props: (
+  "baseline",
+  "sub",
+  "super",
+  "top",
+  "text-top",
+  "middle",
+  "bottom",
+  "text-bottom"
+);
+
+@each $prop in $vertical-align-props {
+  .u-vertical-#{$prop} {
+    vertical-align: $prop !important;
+  }
+}
+
+
+
+
+
+/* Text Transformations */
+
+.u-uppercase {
+  text-transform: uppercase !important;
+}
+
+.u-capitalize {
+  text-transform: capitalize !important;
+}
+
+.u-lowercase {
+  text-transform: lowercase !important;
+}
+
+
+
+
+
+/* Line Height */
+
+.u-line-height-base {
+  line-height: 1 !important;
+}
+
+.u-line-height-none {
+  line-height: 0 !important;
+}
+
+.u-line-height-auto {
+  line-height: auto !important;
 }

@@ -1,14 +1,5 @@
-$config: (
-  color: blue,
-);
+/* ==========================================================================
+   #CONFIGURATION
+   ========================================================================== */
 
-$ui-config: (
-  color: #BADA55,
-  theme: map-get($themes, default),
-);
-
-$config: deep-map-merge($fs-config, $config);
-
-.my-color {
-  color: map-get($config, "color");
-}
+/* Settings like `Support IE8` will go here... */

@@ -43,6 +43,6 @@
   }
 
   @if $transition != null {
-    @include transition($transition);
+    transition: $transition;
   }
 }

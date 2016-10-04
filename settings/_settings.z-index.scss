@@ -1,15 +1,5 @@
-$z-index: (
-  "cog":           50,
-  "overlay":       40,
-  "toc":           30,
-  "iframe-loader": 25,
-  "tooltip":       20
-) !default;
+/* ==========================================================================
+   #Z-INDEX
+   ========================================================================== */
 
-@function z($layer) {
-  @if not map-has-key($z-layers, $layer) {
-    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
-  }
-
-  @return map-get($z-layers, $layer);
-}
+$global-z-index: () !default;

@@ -1,5 +1,15 @@
 .o-page-container {
+  display: flex;
+  flex-flow: column;
   min-height: 100vh;
 
   background-color: $color-background-base;
+
+  &__top-bar {};
+
+  &__body {
+    flex-grow: 1;
+  }
+
+  &__footer {};
 }

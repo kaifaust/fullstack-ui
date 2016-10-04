@@ -5,7 +5,10 @@
 /*
   When we want a border, but not the added mass, we use box-shadow
 
-  TODO: Allow for multiple sides at once
+  TODO:
+  1. Allow for multiple sides at once
+  2. Make border color dynamic
+
 */
 
 @mixin shadow-border(
