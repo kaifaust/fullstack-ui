@@ -1,8 +1,7 @@
 {
   "name": "fullstack-ui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "SCSS framework built to scale",
-  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +11,9 @@
     "oocss",
     "itcss",
     "bem",
-    "css"
+    "css",
+    "framework"
   ],
   "author": "Kai Faust <kai@fullstacklabs.co>",
-  "license": "ISC"
+  "license": "MIT"
 }
