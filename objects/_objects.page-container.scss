@@ -3,7 +3,7 @@
   flex-flow: column;
   min-height: 100vh;
 
-  background-color: $color-background-base;
+  background-color: get-color("app-background");
 
   &__top-bar {};
 

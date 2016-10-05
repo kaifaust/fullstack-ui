@@ -2,34 +2,10 @@
    #COLOR
    ========================================================================== */
 
-$global-palette: $google-material-palette !default;
-
-$color-primary: #00A8F7 !default;
-$color-secondary: #273144 !default;
-
-$color-success: get-color("green-500")  !default;
-$color-alert: rgb(244,67,54) !default;
-
-$color-text-grey: rgb(66,66,66) !default;
-$color-text-black: rgb(33,33,33) !default;
-
-$color-background-base: transparent !default;
-
-$color-text-muted: rgba(0, 0, 0, 0.54) !default;
-
-$color-input-border-base: rgb(211,211,211) !default;
-$color-input-border-hover: darken($color-input-border-base, 25%) !default;
-$color-input-border-focus: darken($color-primary, 5%) !default;
-
-$color-line-base: rgb(211,211,211) !default;
-
-$color-grey-50:  #FAFAFA;
-$color-grey-100: #F5F5F5;
-$color-grey-200: #EEEEEE;
-$color-grey-300: #E0E0E0;
-$color-grey-400: #BDBDBD;
-$color-grey-500: #9E9E9E;
-$color-grey-600: #757575;
-$color-grey-700: #616161;
-$color-grey-800: #424242;
-$color-grey-900: #212121;
+@if global-variable-exists(palette-default) {
+  @include set-palette($palette-default);
+} @else {
+  @error "_palettes.palette-default.scss is required. \
+    You can override defaults with \
+    @include set-color(\"original-default-name\": \"new-value\")"
+}

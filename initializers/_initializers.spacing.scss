@@ -1,0 +1,7 @@
+@mixin set-spacing-unit($name, $spacing) {
+  @if global-variable-exists(global-spacing-units) {
+    $global-spacing-units: map-merge($global-spacing-units, ($name: $spacing)) !global;
+  } @else {
+    $global-spacing-units: ($name, $spacing) !global;
+  }
+}

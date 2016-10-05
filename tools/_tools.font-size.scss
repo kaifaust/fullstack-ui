@@ -12,8 +12,7 @@
     $important: null;
   }
 
-  font-size: $font-size $important;
-  font-size: ($font-size / $global-font-size) * 1rem $important;
+  font-size: rem($font-size) $important;
 
   @if ($line-height == 'auto') {
     line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size) $important;
@@ -22,4 +21,6 @@
   @else {
     line-height: $line-height $important;
   }
+
+  $font-size: null;
 }

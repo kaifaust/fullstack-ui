@@ -19,13 +19,16 @@ $global-secondary-font-url: 'https://fonts.googleapis.com/css?family=Roboto+Mono
 $global-font-size:   16px !default;
 $global-line-height: 24px !default;
 
-$global-font-size-h1: 36px !default;
-$global-font-size-h2: 28px !default;
-$global-font-size-h3: 24px !default;
-$global-font-size-h4: 20px !default;
-$global-font-size-h5: 18px !default;
-$global-font-size-h6: 16px !default;
+$global-font-size-display-4: 112px !default;
+$global-font-size-display-3: 56px  !default;
+$global-font-size-display-2: 45px  !default;
+$global-font-size-display-1: 34px  !default;
+
+$global-font-size-h1: 24px !default;
+$global-font-size-h2: 20px !default;
+$global-font-size-h3: 18px !default;
+$global-font-size-h4: 16px !default;
 
 $global-font-size-small: 13px !default;
 $global-font-size-tiny:  12px !default;
-$global-font-size-micro: 9px !default;
+$global-font-size-micro: 9px  !default;

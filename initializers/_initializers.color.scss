@@ -1,0 +1,14 @@
+@mixin set-color($name, $color) {
+  @if global-variable-exists(global-palette) {
+    $global-palette: map-merge($global-palette, ($name: $color)) !global;
+  } @else {
+    $global-palette: ($name: $color) !global;
+  }
+}
+
+
+@mixin set-palette($map) {
+  @each $name, $color in $map {
+    @include set-color($name, $color);
+  }
+}

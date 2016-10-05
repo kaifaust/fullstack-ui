@@ -2,24 +2,31 @@
    #COLOR
    ========================================================================== */
 
-@function get-color($arg: null) {
-  @if map-has-key($global-color-palette, $arg) {
-    @return map-get($global-color-palette, $arg);
-  }
-  @error "Color `#{$arg}` wasn't found in \
-    $global-color-palette: #{inspect($global-color-palette)}";
+@mixin text-color($color: null, $important: null) {
+  @if $important { $important: !important; }
+  color: get-color($color) $important;
 }
 
-@function is-color($arg) {
-  @each $color, $value in $global-color-palette {
-    @if $arg == $color {
-      @return true;
-    }
-  }
+@mixin background-color($color: null, $important: null) {
+  @if $important { $important: !important; }
+  background-color: get-color($color) $important;
+}
+
+@function is-color($color) {
+  @if map-has-key($global-palette, $color) { @return true; }
   @return false;
 }
 
-@mixin set-color($color-name, $rgb) {
-  $new-color: ($color-name: $rgb);
-  $global-color-palette: map-merge($global-color-palette, $color) !global;
+@function get-color($color) {
+  @if is-color($color) { @return map-get($global-palette, $color); }
+
+  @if type-of($color) == "color" {
+    @return $color;
+    @warn "Instead of calling get-color(#{$color}), you should just use the \
+      color itself or add it to the $global-palette with \
+      set-color(\"color-name-goes-here\": #{$color})";
+  }
+
+  @error "Color `#{$color}` wasn't found in \
+    $global-palette: #{inspect($global-palette)}";
 }
