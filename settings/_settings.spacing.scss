@@ -1,7 +1,7 @@
 /* ==========================================================================
    #SPACING
    ========================================================================== */
-$global-spacing-units: (
+$global-spacing: (
    null:   round($global-line-height),
   "nano":  round($global-line-height * 0.125),
   "micro": round($global-line-height * 0.25),
@@ -9,4 +9,4 @@ $global-spacing-units: (
   "small": round($global-line-height * 0.75),
   "large": round($global-line-height * 1.5),
   "huge":  round($global-line-height * 2),
-) !default;
+);

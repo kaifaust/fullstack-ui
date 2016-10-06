@@ -20,7 +20,7 @@ $build-responsive-spacing-variants: true !default;
         $direction-name: unquote("-#{$direction-name}");
       }
 
-      @each $spacing-name, $spacing-value in $global-spacing-units {
+      @each $spacing-name, $spacing-value in $global-spacing {
         @if $spacing-name != null {
           $spacing-name: unquote("-#{$spacing-name}");
         }

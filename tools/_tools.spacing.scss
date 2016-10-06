@@ -56,21 +56,16 @@ $global-box-directions: (
 
 /* SPACING UNITS */
 
-@mixin set-spacing-unit($spacing-name, $spacing-value) {
-  $new-spacing-unit: ($spacing-name: $spacing-value);
-  $global-spacing-units: map-merge($global-spacing-units, $new-spacing-unit) !global;
-}
-
 @function get-spacing-unit($name: null) {
-   @if map-has-key($global-spacing-units, $name) {
-     @return map-get($global-spacing-units, $name);
+   @if map-has-key($global-spacing, $name) {
+     @return map-get($global-spacing, $name);
    }
    @error "Spacing unit `#{$name}` wasn't found in \
-     $global-spacing-units: #{inspect($global-spacing-units)}";
+     $global-spacing: #{inspect($global-spacing)}";
 }
 
 @function is-spacing-unit($arg) {
-  @each $name, $value in $global-spacing-units {
+  @each $name, $value in $global-spacing {
     @if $arg == $name {
       @return true;
     }
@@ -86,7 +81,7 @@ $global-box-directions: (
     #{$box-prop}: $spacing-unit;
   } @else {
     @error "Spacing unit `#{$spacing-unit}` wasn't found in \
-    $global-spacing-units, nor was it a valid unit";
+    $global-spacing, nor was it a valid unit";
   }
   } @else {
     @error "Box property `#{$box-prop}` wasn't found in \

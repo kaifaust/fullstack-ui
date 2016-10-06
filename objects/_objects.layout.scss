@@ -115,7 +115,7 @@ $use-markup-fix: false !default;
 /* Gutter size modifiers.
    ========================================================================== */
 
-@each $name, $value in $global-spacing-units {
+@each $name, $value in $global-spacing {
   @if $name == null {
     .o-layout {
       margin-left: -#{get-spacing-unit()};
