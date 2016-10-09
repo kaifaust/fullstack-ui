@@ -1,6 +1,7 @@
 {
   "name": "fullstack-ui",
   "version": "0.1.4",
+  "private": true,
   "description": "SCSS framework built to scale",
   "main": "index.js",
   "scripts": {
@@ -15,5 +16,4 @@
     "framework"
   ],
   "author": "Kai Faust <kai@fullstacklabs.co>",
-  "license": "MIT"
 }
