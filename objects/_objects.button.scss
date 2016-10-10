@@ -6,7 +6,7 @@
 // https://github.com/inuitcss/objects.buttons/blob/master/_objects.buttons.scss
 
 
-$btn-padding:             halve(get-spacing-unit());
+$btn-padding:             halve(get-spacing());
 $btn-padding--micro:      quarter($btn-padding);
 $btn-padding--tiny:       halve($btn-padding);
 $btn-padding--large:      double($btn-padding);

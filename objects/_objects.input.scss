@@ -4,7 +4,7 @@
 
 .o-input,
 %o-input {
-  @include padding(halve(get-spacing-unit()));
+  @include padding(halve(get-spacing()));
 
 
   @each $name, $value in $global-spacing {
@@ -13,7 +13,7 @@
         @include padding-vertical(
           halve(
             em(
-              get-spacing-unit($name)
+              get-spacing($name)
             )
           )
         );
