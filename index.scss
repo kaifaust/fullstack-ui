@@ -3,13 +3,17 @@
    ========================================================================== */
 
 /*
+  THIS IS AN EXAMPLE SCSS MANIFEST
+  You should copy this to your project's root and customize it there.
+*/
+
+/*
 
 CONTENT
 
-  PALETTES:     The place to import sets of color
-  INITIALIZERS: Mixins that will help generate some core variables
-  SETTINGS:     Global variables, site-wide settings
   TOOLS:        Mixins and functions
+  SETTINGS:     Global variables, site-wide settings
+  PALETTES:     The place to import sets of color
   GENERIC:      Low-specificity, far-reaching rulesets (e.g. resets)
   ELEMENTS:     Unclassed HTML elements (e.g. a {}, blockquote {}, address {})
   OBJECTS:      Objects, abstractions, and design patterns (e.g. .media {})
@@ -19,43 +23,10 @@ CONTENT
 
 */
 
-// PALETTES
-@import "palettes/palettes.google-material";
-@import "palettes/palettes.input-border";
-
-
-
-
-
-// INITIALIZERS
-@import "initializers/initializers.spacing";
-@import "initializers/initializers.color";
-
-
-
-
-
-// SETTINGS
-@import "settings/settings.config";
-@import "settings/settings.typography";
-@import "settings/settings.spacing";
-
-@import "settings/settings.color";
-@include set-palette($palette-google-material);
-@include set-palette($palette-input-border);
-@include set-color("primary", #006792);
-
-
-
-@import "settings/settings.transition";
-@import "settings/settings.border-radius";
-
-
-
-
-
 
 // TOOLS
+@import "initializers/initializers.spacing";
+@import "initializers/initializers.color";
 @import "tools/tools.math";
 @import "tools/tools.unit-conversion";
 @import "tools/tools.color";
@@ -71,6 +42,28 @@ CONTENT
 @import "tools/tools.highlight";
 @import "tools/tools.debug";
 
+
+
+
+
+// SETTINGS
+@import "settings/settings.config";
+@import "settings/settings.typography";
+@import "settings/settings.spacing";
+@import "settings/settings.color";
+@import "settings/settings.transition";
+@import "settings/settings.border-radius";
+
+
+
+
+
+// PALETTES
+@import "palettes/palettes.google-material";
+@import "palettes/palettes.input-border";
+@include set-palette($palette-google-material);
+@include set-palette($palette-input-border);
+@include set-color(primary, #006792);
 
 
 
