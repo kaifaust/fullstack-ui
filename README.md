@@ -75,7 +75,9 @@ $global-palette: (
 
 ### Initializers
 An *Initializer* is a Sass mixin that do one of two things:
+
 1. Instantiate a Sass map if it has not already been instantiated
+
 2. Add/overwrite existing global settings
 
 Initializers come before settings because we use them to build our settings.
@@ -113,10 +115,32 @@ set-spacing-unit("my-custom-spacing-unit": 100px);
 ```
 
 # *The following topics will be covered soon...*
+
+
 ### Settings
+
+
 ### Tools
+
+
+#### Debug
+Sometimes its helpful to display the value of a variable at a specific point in compilation. For example, if you'd like to see what's in `$global-palette`.
+```
+@include debug($global-palette);
+```
+This embeds a pseudo element on `<body>` that includes the variable's value.
+
+
 ### Generic
+
+
 ### Elements
+
+
 ### Objects
+
+
 ### Components
+
+
 ### Utilities

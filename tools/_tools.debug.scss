@@ -1,0 +1,38 @@
+@mixin debug($variable) {
+  $content: "";
+
+  @if type-of($variable) == map {
+    @each $id, $value in $variable {
+      $prop: unquote("\"#{inspect($id)}\": #{inspect($value)} \A");
+
+      @if $content != "" {
+        $content: append($content, $prop);
+      } @else {
+        $content: #{$prop};
+      }
+    }
+  } @else {
+    $content: $variable;
+  }
+  body {
+    overflow-x: hidden;
+
+    &:before {
+      background-color: white;
+      color: rgba(0,0,0,0.87);
+      position: absolute;
+      line-height: 1.5;
+      text-indent: 4px;
+      right: 24px;
+      top: 24px;
+      z-index: 100;
+      white-space: pre;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      border-radius: 2px;
+      padding: 12px 12px;
+      margin-bottom: 24px;
+      @include slideInRight($duration: 480ms);
+      content: "#{$content}";
+    }
+  }
+}

@@ -6,7 +6,6 @@
   }
 }
 
-
 @mixin set-palette($map) {
   @each $name, $color in $map {
     @include set-color($name, $color);

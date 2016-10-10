@@ -75,14 +75,14 @@ $global-box-directions: (
 
 @mixin spacing($box-prop: null, $spacing-unit: null) {
   @if is-box-prop($box-prop) {
-  @if is-spacing-unit($spacing-unit) {
-    #{$box-prop}: get-spacing-unit($spacing-unit);
-      } @elseif type-of($spacing-unit) == "number" {
-    #{$box-prop}: $spacing-unit;
-  } @else {
-    @error "Spacing unit `#{$spacing-unit}` wasn't found in \
-    $global-spacing, nor was it a valid unit";
-  }
+    @if is-spacing-unit($spacing-unit) {
+      #{$box-prop}: get-spacing-unit($spacing-unit);
+    } @elseif type-of($spacing-unit) == "number" {
+      #{$box-prop}: $spacing-unit;
+    } @else {
+      @error "Spacing unit `#{$spacing-unit}` wasn't found in \
+      $global-spacing, nor was it a valid unit";
+    }
   } @else {
     @error "Box property `#{$box-prop}` wasn't found in \
       $global-box-props: #{inspect($global-box-props)}";
