@@ -1,0 +1,61 @@
+/* ==========================================================================
+   #DIALOG
+   ========================================================================== */
+
+.o-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.502);
+
+  z-index: 1;
+
+  &__box {
+    border: none;
+    @include elevation(3);
+    background: white;
+  }
+
+  &__title {
+    @include padding-top;
+    @include padding-horizontal;
+    @include font-size($global-font-size-h2);
+  }
+
+  &__actions {
+      padding: 8px 8px 8px 24px;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+
+      > * {
+          margin-right: 8px;
+
+          &:first-child {
+              margin-right: 0;
+          }
+      }
+
+      &--full-width {
+        padding: 0 0 8px 0;
+        > * {
+          flex: 0 0 100%;
+          padding-right: 16px;
+          margin-right: 0;
+          text-align: right;
+        }
+      }
+  }
+
+  &__content {
+      padding: 20px 24px 24px 24px;
+      color: get-color("text-secondary-dark");
+  }
+}
