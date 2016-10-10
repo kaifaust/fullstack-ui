@@ -25,14 +25,14 @@
 */
 
 $vertical-align-props: (
-  "baseline",
-  "sub",
-  "super",
-  "top",
-  "text-top",
-  "middle",
-  "bottom",
-  "text-bottom"
+  baseline,
+  sub,
+  super,
+  top,
+  text-top,
+  middle,
+  bottom,
+  text-bottom
 );
 
 @each $prop in $vertical-align-props {
