@@ -10,7 +10,7 @@
  * Page-level constraining and wrapping elements.
  */
 
-$wrapper-width: 960px;
+$wrapper-width: 960px !default;
 
 .o-wrapper,
 %o-wrapper {
