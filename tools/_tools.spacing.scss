@@ -56,6 +56,14 @@ $global-box-directions: (
 
 /* SPACING UNITS */
 
+@mixin set-spacing($name, $spacing) {
+  @if global-variable-exists(global-spacing) {
+    $global-spacing: map-merge($global-spacing, ($name: $spacing)) !global;
+  } @else {
+    $global-spacing: ($name, $spacing) !global;
+  }
+}
+
 @function get-spacing-unit($name: null) {
    @if map-has-key($global-spacing, $name) {
      @return map-get($global-spacing, $name);

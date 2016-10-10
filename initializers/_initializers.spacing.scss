@@ -1,7 +1,0 @@
-@mixin set-spacing($name, $spacing) {
-  @if global-variable-exists(global-spacing) {
-    $global-spacing: map-merge($global-spacing, ($name: $spacing)) !global;
-  } @else {
-    $global-spacing: ($name, $spacing) !global;
-  }
-}
