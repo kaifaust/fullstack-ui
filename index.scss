@@ -45,6 +45,8 @@ CONTENT
 @include set-palette($palette-input-border);
 @include set-color("primary", #006792);
 
+
+
 @import "settings/settings.transition";
 @import "settings/settings.border-radius";
 
@@ -67,6 +69,7 @@ CONTENT
 @import "tools/tools.shadow-border";
 @import "tools/saffron/saffron";
 @import "tools/tools.highlight";
+@import "tools/tools.debug";
 
 
 

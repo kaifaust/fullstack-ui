@@ -24,7 +24,7 @@ $ npm install fullstack-ui --save
 
 Navigate to `node_modules/fullsack-ui/`
 
-Copy `index.example.scss` to your project's root CSS folder and rename it to `index.scss`.
+Copy `index.scss` to your project's root CSS folder.
 
 Update the import paths to point to the framework:
 ```
