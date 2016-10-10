@@ -80,7 +80,7 @@ $btn-border-color:         $btn-background;
 
 .o-btn--round,
 %o-btn--round {
-  border-radius: $global-radius;
+  @include radius;
 }
 
 

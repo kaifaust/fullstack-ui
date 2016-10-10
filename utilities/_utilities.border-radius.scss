@@ -2,26 +2,26 @@
    #BORDER-RADIUS
    ========================================================================== */
 
-.u-round {
-  border-radius: $global-radius !important;
-}
+$build-responsive-radius-variants: true !default;
 
-.u-round-tiny {
-  border-radius: $global-radius-tiny !important;
-}
+@mixin build-radius-classes($breakpoint: null) {
+  @each $radius-name, $radius-value in $global-radius {
+    @if $radius-name != null {
+      $radius-name: unquote("-#{$radius-name}");
+    }
 
-.u-round-small {
-  border-radius: $global-radius-small !important;
-}
+    .u-radius#{$radius-name}#{$breakpoint} {
+      border-radius: em($radius-value) !important;
+    }
+  }
+};
 
-.u-round-large {
-  border-radius: $global-radius-large !important;
-}
+@include build-radius-classes;
 
-.u-round-huge {
-  border-radius: $global-radius-huge !important;
-}
-
-.u-round-full {
-  border-radius: $global-radius-full !important;
+@if $build-responsive-radius-variants == true {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($from: $bp-name) {
+      @include build-radius-classes($breakpoint: \@#{$bp-name});
+    }
+  }
 }

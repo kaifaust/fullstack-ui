@@ -2,9 +2,11 @@
    #BORDER-RADIUS
    ========================================================================== */
 
-$global-radius-tiny: 1px;
-$global-radius-small: 2px;
-$global-radius: 3px;
-$global-radius-large: 8px;
-$global-radius-huge: 12px;
-$global-radius-full: 100px;
+$global-radius: (
+   null:   3px,
+  "tiny":  1px,
+  "small": 2px,
+  "large": 8px,
+  "huge":  12px,
+  "full":  100px
+);

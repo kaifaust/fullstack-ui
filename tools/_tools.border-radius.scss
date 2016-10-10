@@ -1,0 +1,37 @@
+/* ==========================================================================
+   #BORDER-RADIUS
+   ========================================================================== */
+
+@mixin set-radius($name, $radius) {
+  @if global-variable-exists(global-radius) {
+    $global-radius: map-merge($global-radius, ($name: $radius)) !global;
+  } @else {
+    $global-radius: ($name, $radius) !global;
+  }
+}
+
+@function get-radius($name: null) {
+   @if is-radius($name) {
+     @return map-get($global-radius, $name);
+   }
+   @error "Radius unit `#{$name}` wasn't found in \
+     $global-radius: #{inspect($global-radius)}";
+}
+
+@function is-radius($name) {
+  @if map-has-key($global-radius, $name) {
+    @return true;
+  }
+  @return false;
+}
+
+@mixin radius($radius: null) {
+  @if is-radius($radius) {
+    border-radius: em(get-radius($radius));
+  } @elseif type-of($radius) == "number" {
+    border-radius: em($radius);
+  } @else {
+    @error "Radius unit `#{$radius}` wasn't found in \
+    $global-radius, nor was it a valid unit";
+  }
+};
