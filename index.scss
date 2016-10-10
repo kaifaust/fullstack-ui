@@ -58,10 +58,7 @@ CONTENT
 
 // PALETTES
 @import "palettes/palettes.google-material";
-@import "palettes/palettes.input-border";
 @include set-palette($palette-google-material);
-@include set-palette($palette-input-border);
-@include set-color(primary, #006792);
 
 
 
