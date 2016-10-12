@@ -39,13 +39,13 @@
   @include padding-vertical(small);
   @include padding-horizontal;
 }
-.o-table--cozy th,
-.o-table--cozy td {
+.o-table--small th,
+.o-table--small td {
   @include padding-vertical(tiny);
   @include padding-horizontal(small);
 }
-.o-table--compact th,
-.o-table--compact td {
+.o-table--tiny th,
+.o-table--tiny td {
   @include padding-vertical(nano);
   @include padding-horizontal(micro);
 }
@@ -55,12 +55,12 @@
 .o-table--comfortable-columns td {
   @include padding-horizontal;
 }
-.o-table--cozy-columns th,
-.o-table--cozy-columns td {
+.o-table--small-columns th,
+.o-table--small-columns td {
   @include padding-horizontal(small);
 }
-.o-table--compact-columns th,
-.o-table--compact-columns td {
+.o-table--tiny-columns th,
+.o-table--tiny-columns td {
   @include padding-horizontal(tiny);
 }
 
@@ -69,11 +69,11 @@
 .o-table--comfortable-rows td {
   @include padding-vertical;
 }
-.o-table--cozy-rows th
-.o-table--cozy-rows td {
-  @include padding-horizontal(small);
+.o-table--small-rows th
+.o-table--small-rows td {
+  @include padding-vertical(small);
 }
-.o-table--compact-rows th,
-.o-table--compact-rows td {
-  @include padding-horizontal(tiny);
+.o-table--tiny-rows th,
+.o-table--tiny-rows td {
+  @include padding-vertical(tiny);
 }
