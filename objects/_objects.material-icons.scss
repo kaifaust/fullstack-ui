@@ -1,0 +1,69 @@
+/* ==========================================================================
+   #MATERIAL-ICONS
+   ========================================================================== */
+
+// SEE: http://google.github.io/material-design-icons/
+
+.o-mi {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+
+  color: get-color(material-icon);
+
+  &--18 {
+    font-size: rem(18px);
+  }
+
+  &--24 {
+    font-size: rem(24px);
+  }
+
+  &--36 {
+    font-size: rem(36px);
+  }
+
+  &--48 {
+    font-size: rem(48px);
+  }
+
+  &--active {
+    color: get-color(material-icon-active);
+  }
+
+  &--inactive {
+    color: get-color(material-icon-inactive);
+  }
+
+  &--dark {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  &--light {
+    color: rgba(255, 255, 255, 1);
+
+    &--inactive {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
