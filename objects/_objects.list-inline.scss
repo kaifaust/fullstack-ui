@@ -1,0 +1,30 @@
+.o-list-inline {
+  display: flex;
+  align-items: center;
+
+  > *:not(:last-child) {
+    @include margin-right;
+  }
+
+  &--start {
+    align-items: flex-start;
+  }
+
+  &--end {
+    align-items: flex-end;
+  }
+
+  &--stretch {
+    align-items: stretch;
+  }
+
+  @each $name, $spacing in $global-spacing {
+    @if $name != null {
+      &--#{$name} {
+        > *:not(:last-child) {
+          margin-right: em($spacing);
+        }
+      }
+    }
+  }
+}
