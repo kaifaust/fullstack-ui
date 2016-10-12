@@ -90,15 +90,16 @@ CONTENT
 @import "objects/objects.layout";
 @import "objects/objects.child";
 @import "objects/objects.list-inline";
+// TODO: These should be components, not objects
 @import "objects/objects.menu";
 @import "objects/objects.nav-link";
+@import "objects/objects.label";
+@import "objects/objects.horizontal-divider";
+@import "objects/objects.dialog";
 @import "objects/objects.table";
 @import "objects/objects.input";
 @import "objects/objects.text-input";
 @import "objects/objects.button";
-@import "objects/objects.dialog";
-@import "objects/objects.label";
-@import "objects/objects.horizontal-divider";
 @import "objects/objects.tile";
 @import "objects/objects.material-icons";
 
