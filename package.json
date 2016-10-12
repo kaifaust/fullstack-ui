@@ -1,6 +1,6 @@
 {
   "name": "fullstack-ui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "SCSS framework built to scale",
   "main": "index.js",
   "scripts": {
