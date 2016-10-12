@@ -62,7 +62,8 @@ $btn-border-color:         $btn-background;
   &,
   &:hover,
   &:active,
-  &:focus {
+  &:focus,
+  &:visited {
     text-decoration: none; /* [4] */
     color: $btn-color;
   }
