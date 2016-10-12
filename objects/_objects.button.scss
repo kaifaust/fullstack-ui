@@ -256,3 +256,37 @@ $btn-border-color:         $btn-background;
     color: get-color("text-primary-dark");
   }
 }
+
+.o-btn--icon,
+%o-btn--icon {
+  background: transparent;
+  color: get-color(material-icon) !important;
+  border-radius: 100%;
+  @include padding(nano);
+  border-color: transparent !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: rgba(158,158,158,.2);
+    border-color: transparent !important;
+    color: get-color(material-icon-active) !important;
+  }
+}
+
+.o-btn--flat,
+%o-btn--flat {
+  background: transparent !important;
+  color: get-color(primary) !important;
+  border-color: transparent !important;
+  @include radius;
+
+  &:hover {
+    background-color: rgba(158,158,158, 0.2) !important;
+    border-color: transparent !important;
+  }
+  &:focus {
+    background-color: rgba(0,0,0,0.12) !important;
+    border-color: transparent !important;
+  }
+}
