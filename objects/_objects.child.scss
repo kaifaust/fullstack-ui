@@ -1,0 +1,101 @@
+/* ==========================================================================
+   #CHILD
+   ========================================================================== */
+
+/*
+
+Changing the display and visibility of an element in reaction to the state of a
+parent element is a common UI pattern.
+
+For example, we might need to build a table where actionable buttons are
+revealed when you hover over a row. Here's how that might look:
+```
+<table>
+  <tbody>
+    <tr class="o-child:hover(visibility)">
+      <div class="o-child:hover(visibility)__visible"></div>
+    </tr>
+  </tbody>
+</table>
+```
+
+Available options include standard display and visibility properties:
+  DISPLAY: block inline inline-block flex inline-flex none initial inherit
+  VISIBILITY: visible hidden collapse initial inherit
+
+*/
+
+
+/* DISPLAY */
+
+.o-child\:hover\(display\) {
+  @each $prop in $global-display-props {
+    &__#{$prop} {
+      display: none !important;
+      .o-child\:hover\(display\):hover & {
+        display: #{$prop} !important;
+      }
+    }
+  }
+}
+
+.o-child\:active\(display\) {
+  @each $prop in $global-display-props {
+    &__#{$prop} {
+      display: none !important;
+      .o-child\:active\(display\):active & {
+        display: #{$prop} !important;
+      }
+    }
+  }
+}
+
+.o-child\:focus\(display\) {
+  @each $prop in $global-display-props {
+    &__#{$prop} {
+      display: none !important;
+      .o-child\:focus\(display\):focus & {
+        display: #{$prop} !important;
+      }
+    }
+  }
+}
+
+
+
+
+
+/* VISIBILITY */
+
+.o-child\:hover\(visibility\) {
+  @each $prop in $global-visibility-props {
+    &__#{$prop} {
+      visibility: hidden !important;
+      .o-child\:hover\(visibility\):hover & {
+        visibility: #{$prop} !important;
+      }
+    }
+  }
+}
+
+.o-child\:active\(visibility\) {
+  @each $prop in $global-visibility-props {
+    &__#{$prop} {
+      visibility: hidden !important;
+      .o-child\:active\(visibility\):active & {
+        visibility: #{$prop} !important;
+      }
+    }
+  }
+}
+
+.o-child\:focus\(visibility\) {
+  @each $prop in $global-visibility-props {
+    &__#{$prop} {
+      visibility: hidden !important;
+      .o-child\:focus\(visibility\):focus & {
+        visibility: #{$prop} !important;
+      }
+    }
+  }
+}
