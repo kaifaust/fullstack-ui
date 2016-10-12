@@ -1,0 +1,74 @@
+.o-menu {
+  display: inline-block;
+  position: relative;
+  user-select: none;
+
+  &__text {
+    @include text-color(text-primary-dark);
+    vertical-align: middle;
+  }
+
+  &__trigger {
+    cursor: pointer;
+
+    @include radius;
+    @include padding-vertical(micro);
+    @include padding-horizontal(tiny);
+    @include padding-right(micro);
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    background-color: white;
+    @include elevation(2);
+    @include padding-vertical(tiny);
+    @include radius;
+    z-index: 1;
+
+    @include fadeInDown($global-transition-fast);
+
+    .o-menu--right & {
+      right: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    @include padding-horizontal;
+    @include padding-vertical(tiny);
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: get-color(text-primary-dark);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    > i,
+    > .o-mi {
+      @include margin-right(small);
+    }
+
+  }
+
+  &__item-label {
+    white-space: nowrap;
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: get-color(text-primary-dark);
+      text-decoration: none;
+    }
+
+  }
+}
