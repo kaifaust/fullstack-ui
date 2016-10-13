@@ -1,0 +1,66 @@
+/* ==========================================================================
+   #DESCENDENT
+   ========================================================================== */
+
+/*
+
+Changing the display and visibility of an element in reaction to the state of a
+parent element is a common UI pattern.
+
+We might need to build a table where actionable buttons are
+revealed when you hover over a row. Here's how that might look:
+```
+<table>
+  <tbody>
+    <tr class="u-descendent-visibility--visible:hover@desktop">
+      <div class="u-decendent-visibility__target"></div>
+    </tr>
+  </tbody>
+</table>
+```
+
+Other available options exist in $css-props and $mq-breakpoints
+
+*/
+
+
+/* DISPLAY */
+
+@mixin build-descendent-utilities($breakpoint: null, $pseudo-class: '') {
+  @each $prop, $prop-values in $css-props {
+    @each $value in $prop-values {
+      .u-descendent-#{$prop}__target {
+        .u-descendent-#{$prop}--#{$value}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} & {
+          #{$prop}: #{$value} !important;
+        }
+      }
+    }
+  }
+}
+
+// Base
+@include build-descendent-utilities();
+
+// Media query
+@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+  @include mq($from: $breakpoint-name) {
+    @include build-descendent-utilities($breakpoint: \@#{$breakpoint-name});
+  }
+}
+
+// Pseudo Classes
+@each $pseudo-class in get-pseudo-class(descendent) {
+  @include build-descendent-utilities($pseudo-class: \:#{$pseudo-class});
+}
+
+// Media Query and Pseudo Classes
+@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+  @include mq($from: $breakpoint-name) {
+    @each $pseudo-class in get-pseudo-class(descendent) {
+      @include build-descendent-utilities(
+        $breakpoint: \@#{$breakpoint-name},
+        $pseudo-class: \:#{$pseudo-class}
+      );
+    }
+  }
+}
