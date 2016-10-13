@@ -1,0 +1,11 @@
+/* ==========================================================================
+   #PSEUDO-CLASSES
+   ========================================================================== */
+
+@function get-pseudo-class($pseudo-class: ()) {
+  @return map-get($pseudo-classes, $pseudo-class);
+}
+
+@function set-pseudo-class($pseudo-class: ()) {
+  @return map-merge($pseudo-classes, $pseudo-class);
+}

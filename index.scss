@@ -26,6 +26,7 @@ CONTENT
 // TOOLS
 @import "tools/tools.math";
 @import "tools/tools.unit-conversion";
+@import "tools/tools.pseudo-classes";
 @import "tools/tools.border-radius";
 @import "tools/tools.color";
 @import "tools/tools.clearfix";
@@ -46,6 +47,7 @@ CONTENT
 
 // SETTINGS
 @import "settings/settings.core";
+@import "settings/settings.pseudo-classes";
 @import "settings/settings.typography";
 @import "settings/settings.spacing";
 @import "settings/settings.color";
