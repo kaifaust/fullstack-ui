@@ -4,27 +4,38 @@
 
 /*
 
+.u-descendent-* uses $css-props, $pseudo-classes and $mq-breakpoints to generate
+class pairs like:
+
+  .u-descendent-visibility--visible:hover@desktop
+    and .u-descendent-visibility__target
+
+  .u-descendent-display--flex:valid
+    and .u-descendent-display__target
+
+  .u-descendent-vertical-align
+    and .u-descendent-vertical-align__target
+
+
+Use case example:
 Changing the display and visibility of an element in reaction to the state of a
 parent element is a common UI pattern.
 
 We might need to build a table where actionable buttons are
-revealed when you hover over a row. Here's how that might look:
+revealed when the user hovers over a row. Here's how that might look:
+
 ```
 <table>
   <tbody>
-    <tr class="u-descendent-visibility--visible:hover@desktop">
+    <tr class="u-descendent-visibility--visible:hover">
       <div class="u-decendent-visibility__target"></div>
     </tr>
   </tbody>
 </table>
 ```
 
-Other available options exist in $css-props and $mq-breakpoints
-
 */
 
-
-/* DISPLAY */
 
 @mixin build-descendent-utilities($breakpoint: null, $pseudo-class: '') {
   @each $prop, $prop-values in $css-props {
