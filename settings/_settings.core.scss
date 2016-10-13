@@ -4,5 +4,10 @@
 
 /* CONTANTS */
 
-$global-display-props: block inline inline-block flex inline-flex none initial inherit !default;
-$global-visibility-props: visible hidden collapse initial inherit !default;
+$css-props: (
+  "display": block inline inline-block flex inline-flex none initial inherit,
+  "visibility": visible hidden collapse initial inherit,
+  "vertical-align": baseline sub super top text-top middle bottom text-bottom,
+  "word-break": normal break-all keep-all initial inherit,
+  "white-space": normal nowrap pre pre-line pre-wrap initial inherit
+);
