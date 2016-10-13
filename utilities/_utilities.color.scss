@@ -2,29 +2,43 @@
    #COLOR
    ========================================================================== */
 
-
-/* Generate Color Palette */
-
-@mixin build-palette-utilities($breakpoint: null) {
+@mixin build-palette-utilities($breakpoint: null, $pseudo-class: '') {
   @each $color, $rgb in $global-palette {
-    .u-color-text-#{$color}#{$breakpoint} {
-      color: #{$rgb} !important;
-    };
-    .u-color-#{$color}#{$breakpoint} {
+    .u-color--#{$color}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} {
       background-color: #{$rgb} !important;
+    };
+    .u-color-text--#{$color}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} {
+      color: #{$rgb} !important;
     };
   }
 }
 
+// Base
 @include build-palette-utilities();
 
+// Media query
 @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
   @include mq($from: $breakpoint-name) {
     @include build-palette-utilities($breakpoint: \@#{$breakpoint-name});
   }
 }
 
+// Pseudo Classes
+@each $pseudo-class in get-pseudo-class(color) {
+  @include build-palette-utilities($pseudo-class: \:#{$pseudo-class});
+}
 
+// Media Query and Pseudo Classes
+@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+  @include mq($from: $breakpoint-name) {
+    @each $pseudo-class in get-pseudo-class(color) {
+      @include build-palette-utilities(
+        $breakpoint: \@#{$breakpoint-name},
+        $pseudo-class: \:#{$pseudo-class}
+      );
+    }
+  }
+}
 
 
 
