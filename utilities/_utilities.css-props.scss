@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #CSS-PROPERTIES
+   ========================================================================== */
+
+@mixin build-css-prop-utilities($breakpoint: null, $pseudo-class: '') {
+  @each $prop, $prop-values in $css-props {
+    @each $value in $prop-values {
+      .u-#{$prop}--#{$value}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} {
+        #{$prop}: #{$value} !important;
+      }
+    }
+  }
+}
+
+// Base
+@include build-css-prop-utilities();
+
+// Media query
+@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+  @include mq($from: $breakpoint-name) {
+    @include build-css-prop-utilities($breakpoint: \@#{$breakpoint-name});
+  }
+}
+
+// Pseudo Classes
+@each $pseudo-class in get-pseudo-class(css-props) {
+  @include build-css-prop-utilities($pseudo-class: \:#{$pseudo-class});
+}
+
+// Media Query and Pseudo Classes
+@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+  @include mq($from: $breakpoint-name) {
+    @each $pseudo-class in get-pseudo-class(css-props) {
+      @include build-css-prop-utilities(
+        $breakpoint: \@#{$breakpoint-name},
+        $pseudo-class: \:#{$pseudo-class}
+      );
+    }
+  }
+}
