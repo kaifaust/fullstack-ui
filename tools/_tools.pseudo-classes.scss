@@ -6,6 +6,6 @@
   @return map-get($pseudo-classes, $pseudo-class);
 }
 
-@function set-pseudo-class($pseudo-class: ()) {
-  @return map-merge($pseudo-classes, $pseudo-class);
-}
+@mixin set-pseudo-class($name, $class) {
+  $pseudo-classes: map-merge($pseudo-classes, ($name: $class)) !global;
+};
