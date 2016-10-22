@@ -2,90 +2,24 @@
    #COLOR
    ========================================================================== */
 
-@mixin build-palette-utilities($breakpoint: null, $pseudo-class: '') {
-  @each $color, $rgb in $global-palette {
-    .u-color--#{$color}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} {
-      background-color: #{$rgb} !important;
-    };
-    .u-color-text--#{$color}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} {
-      color: #{$rgb} !important;
-    };
+$color-utility-states: hover focus active visited !default;
+$color-utility-responsive: true !default;
+
+// Build background color utility classes
+@each $color, $rgb in $global-palette {
+  @include utility(
+    $class-name: "color--#{$color}",
+    $responsive: $color-utility-responsive,
+    $states: $color-utility-states
+  ) {
+    background-color: #{$rgb} !important;
   }
-}
 
-// Base
-@include build-palette-utilities();
-
-// Media query
-@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
-  @include mq($from: $breakpoint-name) {
-    @include build-palette-utilities($breakpoint: \@#{$breakpoint-name});
+  @include utility(
+    $class-name: "text-color--#{$color}",
+    $responsive: $color-utility-responsive,
+    $states: $color-utility-states
+  ) {
+    color: #{$rgb} !important;
   }
-}
-
-// Pseudo Classes
-@each $pseudo-class in get-pseudo-class(color) {
-  @include build-palette-utilities($pseudo-class: \:#{$pseudo-class});
-}
-
-// Media Query and Pseudo Classes
-@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
-  @include mq($from: $breakpoint-name) {
-    @each $pseudo-class in get-pseudo-class(color) {
-      @include build-palette-utilities(
-        $breakpoint: \@#{$breakpoint-name},
-        $pseudo-class: \:#{$pseudo-class}
-      );
-    }
-  }
-}
-
-
-
-.u-color-text-white {
-  color: get-color("white") !important;
-}
-
-.u-color-white {
-  background-color: get-color("white") !important;
-}
-
-.u-color-text-grey {
-  color: get-color("grey") !important;
-}
-
-.u-color-grey {
-  background-color: get-color("grey") !important;
-}
-
-.u-color-text-primary {
-  color: get-color("primary") !important;
-}
-
-.u-color-primary {
-  background-color: get-color("primary") !important;
-}
-
-.u-color-text-secondary {
-  color: get-color("secondary") !important;
-}
-
-.u-color-secondary {
-  background-color: get-color("secondary") !important;
-}
-
-.u-color-text-success {
-  color: get-color("success") !important;
-}
-
-.u-color-success {
-  background-color: get-color("success") !important;
-}
-
-.u-color-text-alert {
-  color: get-color("alert") !important;
-}
-
-.u-color-alert {
-  background-color: get-color("alert") !important;
 }
