@@ -27,6 +27,7 @@ CONTENT
 @import "tools/tools.math";
 @import "tools/tools.string-replace";
 @import "tools/tools.unit-conversion";
+@import "tools/tools.utility";
 @import "tools/tools.css-props";
 @import "tools/tools.pseudo-classes";
 @import "tools/tools.border-radius";
@@ -49,7 +50,7 @@ CONTENT
 
 // SETTINGS
 @import "settings/settings.core";
-
+@import "settings/settings.namespace";
 @import "settings/settings.pseudo-classes";
 @include set-pseudo-class(css-props, (
   hover active focus disabled enabled

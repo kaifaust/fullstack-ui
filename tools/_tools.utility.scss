@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #UTILITY
+   ========================================================================== */
+
+@mixin utility(
+  $class-name,
+  $responsive: false,
+  $states: null
+) {
+
+  .#{$utility-prefix}#{$class-name} {
+    @content;
+  }
+
+  @if $responsive and $states {
+    @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+      @include mq($from: $breakpoint-name) {
+        @each $state in $states {
+          .#{$utility-prefix}#{$class-name}#{unquote(
+            "\\:#{$state}")}\@#{$breakpoint-name}#{unquote(":#{$state}")} {
+            @content;
+          }
+        }
+      }
+    }
+  } @else {
+    @if $responsive {
+      @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+        @include mq($from: $breakpoint-name) {
+          .#{$utility-prefix}#{$class-name}#{$breakpoint-name} {
+            @content;
+          }
+        }
+      }
+    }
+
+    @if $states {
+      @each $state in $states {
+        .#{$utility-prefix}#{$class-name}#{unquote("\\:#{$state}")}#{unquote(
+          ":#{$state}")} {
+          @content;
+        }
+      }
+    }
+  }
+}
