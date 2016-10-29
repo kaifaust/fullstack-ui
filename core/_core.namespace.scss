@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #NAMESPACE
+   ========================================================================== */
+
+/* Values declared in settings */
+
+$global-namespaces: ();
+
+@function get-namespace($namespace) {
+  @return map-get($global-namespaces, $namespace);
+}
+
+@mixin namespace($namespace) {
+  $global-namespaces: map-merge($global-namespaces, $namespace) !global;
+}

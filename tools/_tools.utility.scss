@@ -8,7 +8,7 @@
   $states: null
 ) {
 
-  .#{$utility-prefix}#{$class-name} {
+  .#{get-namespace(utility)}#{$class-name} {
     @content;
   }
 
@@ -16,7 +16,7 @@
     @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
       @include mq($from: $breakpoint-name) {
         @each $state in $states {
-          .#{$utility-prefix}#{$class-name}#{unquote(
+          .#{get-namespace(utility)}#{$class-name}#{unquote(
             "\\:#{$state}")}\@#{$breakpoint-name}#{unquote(":#{$state}")} {
             @content;
           }
@@ -27,7 +27,7 @@
     @if $responsive {
       @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
         @include mq($from: $breakpoint-name) {
-          .#{$utility-prefix}#{$class-name}#{$breakpoint-name} {
+          .#{get-namespace(utility)}#{$class-name}#{$breakpoint-name} {
             @content;
           }
         }
@@ -36,7 +36,7 @@
 
     @if $states {
       @each $state in $states {
-        .#{$utility-prefix}#{$class-name}#{unquote("\\:#{$state}")}#{unquote(
+        .#{get-namespace(utility)}#{$class-name}#{unquote("\\:#{$state}")}#{unquote(
           ":#{$state}")} {
           @content;
         }

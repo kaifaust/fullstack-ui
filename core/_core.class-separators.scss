@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #CLASS-SEPARATORS
+   ========================================================================== */
+
+/* Values declared in settings */
+
+$global-class-separators: ();
+
+@function get-class-separator($name) {
+  @return map-get($global-class-separators, $name);
+}
+
+@mixin class-separator($class-separator) {
+  $global-class-separators: map-merge($global-class-separators, $class-separator) !global;
+}

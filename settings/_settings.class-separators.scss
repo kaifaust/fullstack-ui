@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #CLASS-SEPARATORS
+   ========================================================================== */
+
+/* Sets $global-class-separators */
+
+@include class-separator((
+  prefix: "-",
+  element: "__",
+  modifier: "--",
+  responsive: "\\@",
+  pseudo-state: "\\:",
+  state: "--",
+  content-state: "--"
+));

@@ -1,13 +1,11 @@
 /* ==========================================================================
-   #NAMESPACE
+   #COMPONENT
    ========================================================================== */
 
-/* Sets $global-namespaces */
+/* In the BEM context, we call blocks `Components` */
 
-@include namespace((
-  component: "c-",
-  utility: "u-",
-  object: "o-",
-  state: "is-",
-  content-state: "has-"
-));
+@mixin component($name) {
+  .#{get-namespace(component)}#{$name} {
+    @content;
+  }
+}

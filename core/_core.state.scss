@@ -1,0 +1,37 @@
+/* ==========================================================================
+   #STATE
+   ========================================================================== */
+
+@mixin pseudo-state(
+  $state,
+  $include-modifier: true
+) {
+  @each $i in $state {
+    @if $include-modifier {
+      &:#{$i},
+      &#{get-class-separator(pseudo-state)}#{$i} {
+        @content;
+      }
+    } @else {
+      &:#{$i} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin state($state) {
+  @each $i in $state {
+    &#{get-class-separator(state)}#{get-namespace(state)}#{$i} {
+      @content;
+    }
+  }
+}
+
+@mixin content-state($content-state) {
+  @each $i in $content-state {
+    &#{get-class-separator(content-state)}#{get-namespace(content-state)}#{$i} {
+      @content;
+    }
+  }
+}
