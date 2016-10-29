@@ -2,15 +2,19 @@
    #INPUTS
    ========================================================================== */
 
+/*
+  1. Perhaps it's dangerous to assume this for all inputs, but it's very helpful
+     for many UI requirements
+  2. Reset/Normalize
+  3. Tells browsers we're applying custom styling to inputs
+*/
+
 input {
   display: block;
-  position: relative;
-
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  outline: none;
-
-  font-weight: normal;
-  letter-spacing: 0.2px;
+  position: relative; /* 1 */
+  background: transparent; /* 2 */
+  border: 0; /* 2 */
+  box-shadow: none; /* 2 */
+  outline: none; /* 2 */
+  appearance: none; /* 2 */
 }

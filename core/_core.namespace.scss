@@ -6,10 +6,14 @@
 
 $global-namespaces: ();
 
-@function get-namespace($namespace) {
-  @return map-get($global-namespaces, $namespace);
+@mixin namespace($name) {
+  $global-namespaces: map-merge(
+    $global-namespaces,
+    $name
+  )
+  !global;
 }
 
-@mixin namespace($namespace) {
-  $global-namespaces: map-merge($global-namespaces, $namespace) !global;
+@function get-namespace($name) {
+  @return map-get($global-namespaces, $name);
 }
