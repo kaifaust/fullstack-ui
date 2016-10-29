@@ -101,17 +101,10 @@ CONTENT
 @import "generic/generic.box-sizing";
 @import "generic/generic.normalize";
 @import "generic/generic.reset";
-
-
-
-
-
-// ELEMENTS
-
-@import "elements/elements.headings";
-@import "elements/elements.tables";
-@import "elements/elements.inputs";
-@import "elements/elements.links";
+@import "generic/generic.headings";
+@import "generic/generic.tables";
+@import "generic/generic.inputs";
+@import "generic/generic.links";
 
 
 
