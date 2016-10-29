@@ -1,4 +1,4 @@
-.o-menu {
+.c-menu {
   display: inline-block;
   position: relative;
   user-select: none;
@@ -31,7 +31,7 @@
 
     @include fadeInDown($global-transition-fast);
 
-    .o-menu--right & {
+    .c-menu--right & {
       right: 0;
     }
   }
@@ -54,7 +54,7 @@
     }
 
     > i,
-    > .o-mi {
+    > .c-mi {
       @include margin-right(small);
     }
 

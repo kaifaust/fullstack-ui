@@ -2,8 +2,7 @@
    #INPUT
    ========================================================================== */
 
-.o-input,
-%o-input {
+.c-input {
   @include padding(halve(get-spacing()));
 
 

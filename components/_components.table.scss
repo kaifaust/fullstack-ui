@@ -2,8 +2,7 @@
    #TABLE
    ========================================================================== */
 
-.o-table,
-%o-table {
+.c-table {
 
   &--fixed {
     table-layout: fixed;
@@ -12,7 +11,7 @@
   tr {
     border-bottom: 1px solid get-color("grey-300");
 
-    @at-root .o-table thead tr {
+    @at-root .c-table thead tr {
       border-bottom: 1px solid get-color("grey-400");
       background-color: white;
     }
@@ -21,59 +20,59 @@
   th {
     @include label();
 
-    @at-root .o-table--middle th {
+    @at-root .c-table--middle th {
       vertical-align: middle;
     }
   }
 
   td {
-    @at-root .o-table--middle td {
+    @at-root .c-table--middle td {
       vertical-align: middle;
     }
   }
 }
 
 /* Padding variants */
-.o-table--comfortable th,
-.o-table--comfortable td {
+.c-table--comfortable th,
+.c-table--comfortable td {
   @include padding-vertical(small);
   @include padding-horizontal;
 }
-.o-table--small th,
-.o-table--small td {
+.c-table--small th,
+.c-table--small td {
   @include padding-vertical(tiny);
   @include padding-horizontal(small);
 }
-.o-table--tiny th,
-.o-table--tiny td {
+.c-table--tiny th,
+.c-table--tiny td {
   @include padding-vertical(nano);
   @include padding-horizontal(micro);
 }
 
 /* Column padding variants */
-.o-table--comfortable-columns th,
-.o-table--comfortable-columns td {
+.c-table--comfortable-columns th,
+.c-table--comfortable-columns td {
   @include padding-horizontal;
 }
-.o-table--small-columns th,
-.o-table--small-columns td {
+.c-table--small-columns th,
+.c-table--small-columns td {
   @include padding-horizontal(small);
 }
-.o-table--tiny-columns th,
-.o-table--tiny-columns td {
+.c-table--tiny-columns th,
+.c-table--tiny-columns td {
   @include padding-horizontal(tiny);
 }
 
 /* Row padding variants */
-.o-table--comfortable-rows th,
-.o-table--comfortable-rows td {
+.c-table--comfortable-rows th,
+.c-table--comfortable-rows td {
   @include padding-vertical;
 }
-.o-table--small-rows th
-.o-table--small-rows td {
+.c-table--small-rows th
+.c-table--small-rows td {
   @include padding-vertical(small);
 }
-.o-table--tiny-rows th,
-.o-table--tiny-rows td {
+.c-table--tiny-rows th,
+.c-table--tiny-rows td {
   @include padding-vertical(tiny);
 }

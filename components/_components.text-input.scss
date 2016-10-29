@@ -2,9 +2,8 @@
    #TEXT-INPUT
    ========================================================================== */
 
-.o-text-input,
-%o-text-input {
-  @extend %o-input;
+.c-text-input {
+  @extend .c-input;
   transition: box-shadow $global-transition-fast;
 
   width: 100%;

@@ -35,8 +35,7 @@ $btn-border-color:         $btn-background;
  *    grow larger as we add borders.
  */
 
-.o-btn,
-%o-btn {
+.c-btn {
   display: inline-block; /* [1] */
   vertical-align: middle; /* [2] */
   font: inherit; /* [3] */
@@ -72,21 +71,18 @@ $btn-border-color:         $btn-background;
 /**
 * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
 */
-.o-btn::-moz-focus-inner,
-%o-btn::-moz-focus-inner {
+.c-btn::-moz-focus-inner {
   border:  0;
   padding: 0;
 }
 
 
-.o-btn--round,
-%o-btn--round {
+.c-btn--round {
   @include radius;
 }
 
 
-.o-btn--outline,
-%o-btn--outline {
+.c-btn--outline {
   &,
   &:hover,
   &:active,
@@ -97,8 +93,7 @@ $btn-border-color:         $btn-background;
   }
 }
 
-.o-btn--outline-white,
-%o-btn--outline-white {
+.c-btn--outline-white {
   &,
   &:hover,
   &:active,
@@ -110,8 +105,7 @@ $btn-border-color:         $btn-background;
 }
 
 
-.o-btn--neutral,
-%o-btn--neutral {
+.c-btn--neutral {
   &,
   &:hover,
   &:active,
@@ -124,26 +118,22 @@ $btn-border-color:         $btn-background;
 }
 
 
-.o-btn--micro,
-%o-btn--micro {
+.c-btn--micro {
   padding: $btn-padding--micro - $btn-border-width double($btn-padding--micro) - $btn-border-width; /* [7] */
 }
 
 
-.o-btn--tiny,
-%o-btn--tiny {
+.c-btn--tiny {
   padding: $btn-padding--tiny - $btn-border-width double($btn-padding--tiny) - $btn-border-width; /* [7] */
 }
 
 
-.o-btn--large,
-%o-btn--large {
+.c-btn--large {
   padding: $btn-padding--large - $btn-border-width double($btn-padding--large) - $btn-border-width; /* [7] */
 }
 
 
-.o-btn--full,
-%o-btn--full {
+.c-btn--full {
   width: 100%;
 }
 
@@ -155,13 +145,11 @@ $btn-border-color:         $btn-background;
  *    button.
  */
 
-.o-btn--pill,
-%o-btn--pill {
+.c-btn--pill {
   border-radius: 100px; /* [1] */
 }
 
-.o-btn--elevate,
-%o-btn--elevate {
+.c-btn--elevate {
   @include elevation(
     $elevation: 1,
     $transition: box-shadow ease $global-transition-fast
@@ -185,8 +173,7 @@ $btn-border-color:         $btn-background;
   }
 }
 
-.o-btn--elevate\@hover,
-%o-btn--elevate\@hover {
+.c-btn--elevate\@hover {
   &:focus,
   &:hover {
     @include elevation(
@@ -205,8 +192,7 @@ $btn-border-color:         $btn-background;
   }
 }
 
-.o-btn--elevate\@active,
-%o-btn--elevate\@active {
+.c-btn--elevate\@active {
   &:active {
     @include elevation(
       $elevation: 2,
@@ -217,13 +203,11 @@ $btn-border-color:         $btn-background;
 }
 
 
-.o-btn--uppercase,
-%o-btn--uppercase {
+.c-btn--uppercase {
   @include label();
 }
 
-.o-btn--alert,
-%o-btn--alert {
+.c-btn--alert {
   &,
   &:hover,
   &:active,
@@ -234,8 +218,7 @@ $btn-border-color:         $btn-background;
   }
 }
 
-.o-btn--transparent,
-%o-btn--transparent {
+.c-btn--transparent {
   &,
   &:hover,
   &:active,
@@ -246,8 +229,7 @@ $btn-border-color:         $btn-background;
   }
 }
 
-.o-btn--white,
-%o-btn--white {
+.c-btn--white {
   &,
   &:hover,
   &:active,
@@ -258,8 +240,7 @@ $btn-border-color:         $btn-background;
   }
 }
 
-.o-btn--icon,
-%o-btn--icon {
+.c-btn--icon {
   background: transparent;
   color: get-color(material-icon) !important;
   border-radius: 100%;
@@ -275,8 +256,7 @@ $btn-border-color:         $btn-background;
   }
 }
 
-.o-btn--flat,
-%o-btn--flat {
+.c-btn--flat {
   background: transparent !important;
   color: get-color(primary) !important;
   border-color: transparent !important;

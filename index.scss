@@ -52,6 +52,7 @@ CONTENT
 
 
 // TOOLS
+
 @import "tools/saffron/saffron";
 @import "tools/tools.border-radius";
 @import "tools/tools.clearfix";
@@ -60,10 +61,6 @@ CONTENT
 @import "tools/tools.highlight";
 @import "tools/tools.label";
 @import "tools/tools.shadow-border";
-
-
-
-
 
 
 
@@ -114,30 +111,29 @@ CONTENT
 
 // OBJECTS
 
-@import "objects/objects.wrapper";
-@import "objects/objects.print-wrapper";
-@import "objects/objects.page-container";
 @import "objects/objects.layout";
 @import "objects/objects.list-inline";
-
-// TODO: These should be components, not objects
-@import "objects/objects.menu";
-@import "objects/objects.nav-link";
-@import "objects/objects.label";
-@import "objects/objects.horizontal-divider";
-@import "objects/objects.dialog";
-@import "objects/objects.table";
-@import "objects/objects.input";
-@import "objects/objects.text-input";
-@import "objects/objects.button";
-@import "objects/objects.tile";
-@import "objects/objects.material-icons";
 
 
 
 
 
 // COMPONENTS
+
+@import "components/components.wrapper";
+@import "components/components.print-wrapper";
+@import "components/components.page-container";
+@import "components/components.menu";
+@import "components/components.nav-link";
+@import "components/components.label";
+@import "components/components.horizontal-divider";
+@import "components/components.dialog";
+@import "components/components.table";
+@import "components/components.input";
+@import "components/components.text-input";
+@import "components/components.button";
+@import "components/components.tile";
+@import "components/components.material-icons";
 
 
 
