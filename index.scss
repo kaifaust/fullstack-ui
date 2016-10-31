@@ -43,6 +43,7 @@ CONTENT
 @import "core/core.font-size";
 @import "core/core.media-query";
 @import "core/core.spacing";
+@import "core/core.radius";
 @import "core/core.debug";
 @import "core/core.z-index";
 
@@ -53,7 +54,6 @@ CONTENT
 // TOOLS
 
 @import "tools/saffron/saffron";
-@import "tools/tools.border-radius";
 @import "tools/tools.clearfix";
 @import "tools/tools.elevation";
 @import "tools/tools.hidden";
