@@ -5,14 +5,14 @@
 a {
   &,
   &:visited {
-    color: get-color(link-primary-dark);
+    color: color(link-primary-dark);
     text-decoration: none;
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: get-color(link-primary-dark);
+    color: color(link-primary-dark);
     text-decoration: underline;
   }
 

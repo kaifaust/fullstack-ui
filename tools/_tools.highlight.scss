@@ -4,12 +4,12 @@
 
 @mixin highlight-even {
   & > *:nth-child(2n+2) {
-    background: get-color("grey-50");
+    background: color("grey-50");
   }
 }
 
 @mixin highlight-odd {
   & > *:nth-child(2n+1) {
-    background: get-color("grey-50");
+    background: color("grey-50");
   }
 }

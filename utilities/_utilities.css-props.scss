@@ -23,14 +23,14 @@
 }
 
 // Pseudo Classes
-@each $pseudo-class in get-pseudo-class(css-props) {
+@each $pseudo-class in pseudo-class(css-props) {
   @include build-css-prop-utilities($pseudo-class: \:#{$pseudo-class});
 }
 
 // Media Query and Pseudo Classes
 @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
   @include mq($from: $breakpoint-name) {
-    @each $pseudo-class in get-pseudo-class(css-props) {
+    @each $pseudo-class in pseudo-class(css-props) {
       @include build-css-prop-utilities(
         $breakpoint: \@#{$breakpoint-name},
         $pseudo-class: \:#{$pseudo-class}

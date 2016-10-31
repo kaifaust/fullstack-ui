@@ -29,7 +29,7 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 
-  color: get-color(material-icon);
+  color: color(material-icon);
 
   &--18 {
     font-size: rem(18px);
@@ -48,11 +48,11 @@
   }
 
   &--active {
-    color: get-color(material-icon-active);
+    color: color(material-icon-active);
   }
 
   &--inactive {
-    color: get-color(material-icon-inactive);
+    color: color(material-icon-inactive);
   }
 
   &--dark {

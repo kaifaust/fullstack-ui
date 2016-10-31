@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .c-input {
-  @include padding(halve(get-spacing()));
+  @include padding(halve(spacing()));
 
 
   @each $name, $value in $global-spacing {
@@ -12,7 +12,7 @@
         @include padding-vertical(
           halve(
             em(
-              get-spacing($name)
+              spacing($name)
             )
           )
         );

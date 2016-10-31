@@ -14,6 +14,6 @@ $global-namespaces: ();
   !global;
 }
 
-@function get-namespace($name) {
+@function namespace($name) {
   @return map-get($global-namespaces, $name);
 }

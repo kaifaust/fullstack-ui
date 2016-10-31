@@ -60,14 +60,14 @@ revealed when the user hovers over a row. Here's how that might look:
 }
 
 // Pseudo Classes
-@each $pseudo-class in get-pseudo-class(descendent) {
+@each $pseudo-class in pseudo-class(descendent) {
   @include build-descendent-utilities($pseudo-class: \:#{$pseudo-class});
 }
 
 // Media Query and Pseudo Classes
 @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
   @include mq($from: $breakpoint-name) {
-    @each $pseudo-class in get-pseudo-class(descendent) {
+    @each $pseudo-class in pseudo-class(descendent) {
       @include build-descendent-utilities(
         $breakpoint: \@#{$breakpoint-name},
         $pseudo-class: \:#{$pseudo-class}

@@ -3,12 +3,12 @@
    ========================================================================== */
 
 @mixin utility(
-  $class-name,
+  $name,
   $responsive: false,
   $states: null
 ) {
 
-  .#{get-namespace(utility)}#{$class-name} {
+  .#{namespace(utility)}#{$name} {
     @content;
   }
 
@@ -16,7 +16,7 @@
     @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
       @include mq($from: $breakpoint-name) {
         @each $state in $states {
-          .#{get-namespace(utility)}#{$class-name}#{unquote(
+          .#{namespace(utility)}#{$name}#{unquote(
             "\\:#{$state}")}\@#{$breakpoint-name}#{unquote(":#{$state}")} {
             @content;
           }
@@ -27,7 +27,7 @@
     @if $responsive {
       @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
         @include mq($from: $breakpoint-name) {
-          .#{get-namespace(utility)}#{$class-name}#{$breakpoint-name} {
+          .#{namespace(utility)}#{$name}#{$breakpoint-name} {
             @content;
           }
         }
@@ -36,7 +36,7 @@
 
     @if $states {
       @each $state in $states {
-        .#{get-namespace(utility)}#{$class-name}#{unquote("\\:#{$state}")}#{unquote(
+        .#{namespace(utility)}#{$name}#{unquote("\\:#{$state}")}#{unquote(
           ":#{$state}")} {
           @content;
         }

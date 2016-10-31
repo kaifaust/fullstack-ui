@@ -13,7 +13,7 @@
 
 @mixin shadow-border(
   $side: 'all',
-  $color: get-color("divider-dark")
+  $color: color("divider-dark")
 ) {
 
   @if $side == 'all' {

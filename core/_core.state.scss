@@ -9,7 +9,7 @@
   @each $i in $state {
     @if $include-modifier {
       &:#{$i},
-      &#{get-class-separator(pseudo-state)}#{$i} {
+      &#{class-separator(pseudo-state)}#{$i} {
         @content;
       }
     } @else {
@@ -22,7 +22,7 @@
 
 @mixin state($state) {
   @each $i in $state {
-    &#{get-class-separator(state)}#{get-namespace(state)}#{$i} {
+    &#{class-separator(state)}#{namespace(state)}#{$i} {
       @content;
     }
   }
@@ -30,7 +30,7 @@
 
 @mixin content-state($content-state) {
   @each $i in $content-state {
-    &#{get-class-separator(content-state)}#{get-namespace(content-state)}#{$i} {
+    &#{class-separator(content-state)}#{namespace(content-state)}#{$i} {
       @content;
     }
   }

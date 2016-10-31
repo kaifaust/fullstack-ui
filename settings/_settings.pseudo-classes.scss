@@ -2,7 +2,7 @@
    #PSEUDO-CLASSES
    ========================================================================== */
 
-// Accessible with get-pseudo-class() and set-pseudo-class();
+// Accessible with pseudo-class() and pseudo-class();
 $pseudo-classes: (
   "descendent": hover active focus disabled enabled read-only required valid invalid
 );

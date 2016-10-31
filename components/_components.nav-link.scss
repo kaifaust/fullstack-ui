@@ -1,19 +1,19 @@
 .c-nav-link {
   cursor: pointer;
-  color: get-color(text-secondary-dark);
+  color: color(text-secondary-dark);
   box-shadow: inset 0 -2px 0 0 transparent;
   @include padding-vertical(tiny);
 
   &:hover,
   &:active,
   &:focus {
-    color: get-color(text-primary-dark);
-    box-shadow: inset 0 -2px 0 0 get-color(divider-dark);
+    color: color(text-primary-dark);
+    box-shadow: inset 0 -2px 0 0 color(divider-dark);
   }
 
   &.is-active {
     font-weight: 500;
-    color: get-color(text-primary-dark);
-    box-shadow: inset 0 -2px 0 0 get-color(primary);
+    color: color(text-primary-dark);
+    box-shadow: inset 0 -2px 0 0 color(primary);
   }
 }

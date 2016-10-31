@@ -6,16 +6,16 @@
 // https://github.com/inuitcss/objects.buttons/blob/master/_objects.buttons.scss
 
 
-$btn-padding:             halve(get-spacing());
+$btn-padding:             halve(spacing());
 $btn-padding--micro:      quarter($btn-padding);
 $btn-padding--tiny:       halve($btn-padding);
 $btn-padding--large:      double($btn-padding);
 
-$btn-background:           get-color("primary");
+$btn-background:           color("primary");
 $btn-color:                #FFFFFF;
 
 $btn-outline-background:   transparent;
-$btn-outline-color:        get-color("primary");
+$btn-outline-color:        color("primary");
 $btn-outline-border-width: 2px;
 
 $btn-border-width:         2px;
@@ -111,8 +111,8 @@ $btn-border-color:         $btn-background;
   &:active,
   &:focus {
     background: transparent;
-    color: get-color("text-primary-dark") !important;
-    border-color: get-color("divider-dark") !important;
+    color: color("text-primary-dark") !important;
+    border-color: color("divider-dark") !important;
     border-width: $btn-outline-border-width !important;
   }
 }
@@ -212,8 +212,8 @@ $btn-border-color:         $btn-background;
   &:hover,
   &:active,
   &:focus {
-    background: get-color("alert");
-    border-color: get-color("alert") !important;
+    background: color("alert");
+    border-color: color("alert") !important;
     color: white;
   }
 }
@@ -225,7 +225,7 @@ $btn-border-color:         $btn-background;
   &:focus {
     background: transparent;
     border-color: transparent !important;
-    color: get-color("text-primary-dark");
+    color: color("text-primary-dark");
   }
 }
 
@@ -236,13 +236,13 @@ $btn-border-color:         $btn-background;
   &:focus {
     background: white;
     border-color: transparent !important;
-    color: get-color("text-primary-dark");
+    color: color("text-primary-dark");
   }
 }
 
 .c-btn--icon {
   background: transparent;
-  color: get-color(material-icon) !important;
+  color: color(material-icon) !important;
   border-radius: 100%;
   @include padding(nano);
   border-color: transparent !important;
@@ -252,13 +252,13 @@ $btn-border-color:         $btn-background;
   &:focus {
     background: rgba(158,158,158,.2);
     border-color: transparent !important;
-    color: get-color(material-icon-active) !important;
+    color: color(material-icon-active) !important;
   }
 }
 
 .c-btn--flat {
   background: transparent !important;
-  color: get-color(primary) !important;
+  color: color(primary) !important;
   border-color: transparent !important;
   @include radius;
 

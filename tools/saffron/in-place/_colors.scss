@@ -14,7 +14,7 @@
   }
 }
 
-@mixin color($from, $to, $selector: ":hover", $duration: 1.5s, $delay: 0s) {
+@mixin safColor($from, $to, $selector: ":hover", $duration: 1.5s, $delay: 0s) {
   color: $from;
   @include u-transition(color $duration $delay);
   &#{$selector} {

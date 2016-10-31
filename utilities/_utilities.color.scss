@@ -8,7 +8,7 @@ $color-utility-responsive: true !default;
 // Build background color utility classes
 @each $color, $rgb in $global-palette {
   @include utility(
-    $class-name: "color--#{$color}",
+    $name: "color--#{$color}",
     $responsive: $color-utility-responsive,
     $states: $color-utility-states
   ) {
@@ -16,7 +16,7 @@ $color-utility-responsive: true !default;
   }
 
   @include utility(
-    $class-name: "text-color--#{$color}",
+    $name: "text-color--#{$color}",
     $responsive: $color-utility-responsive,
     $states: $color-utility-states
   ) {

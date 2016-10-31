@@ -24,27 +24,26 @@ CONTENT
   Copy this to your project's root and customize it there.
 */
 
-
 // CORE
 
-@import "core/core.namespace";
+@import "core/core.math";
+@import "core/core.deep-map-merge";
+@import "core/core.string-replace";
+@import "core/core.unit-conversion";
+@import "core/core.css-props";
 @import "core/core.class-separators";
+@import "core/core.pseudo-classes";
+@import "core/core.namespace";
+@import "core/core.utility";
 @import "core/core.component";
 @import "core/core.element";
 @import "core/core.modifier";
 @import "core/core.state";
-@import "core/core.math";
-@import "core/core.string-replace";
-@import "core/core.unit-conversion";
-@import "core/core.utility";
-@import "core/core.css-props";
-@import "core/core.pseudo-classes";
 @import "core/core.color";
 @import "core/core.font-size";
 @import "core/core.media-query";
 @import "core/core.spacing";
 @import "core/core.debug";
-@import "core/core.deep-map-merge";
 @import "core/core.z-index";
 
 
@@ -72,7 +71,7 @@ CONTENT
 @import "settings/settings.namespace";
 @import "settings/settings.class-separators";
 @import "settings/settings.pseudo-classes";
-@include set-pseudo-class(css-props, (
+@include pseudo-class(css-props, (
   hover active focus disabled enabled
 ));
 
@@ -89,7 +88,7 @@ CONTENT
 // PALETTES
 
 @import "palettes/palettes.google-material";
-@include set-palette($palette-google-material);
+@include palette($palette-google-material);
 
 
 

@@ -74,7 +74,7 @@ $use-markup-fix: false !default;
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: unquote("-#{get-spacing()}"); /* [3] */
+  margin-left: unquote("-#{spacing()}"); /* [3] */
 
   @if ($use-markup-fix == false) {
     font-size: 0;
@@ -118,18 +118,18 @@ $use-markup-fix: false !default;
 @each $name, $value in $global-spacing {
   @if $name == null {
     .o-layout {
-      margin-left: -#{get-spacing()};
+      margin-left: -#{spacing()};
 
       > .o-layout__item {
-        padding-left: #{get-spacing()};
+        padding-left: #{spacing()};
       }
     }
   } @else {
     .o-layout--#{$name} {
-      margin-left: -#{get-spacing($name)};
+      margin-left: -#{spacing($name)};
 
       > .o-layout__item {
-        padding-left: #{get-spacing($name)};
+        padding-left: #{spacing($name)};
       }
     }
   }

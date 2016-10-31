@@ -2,7 +2,7 @@
    #COLOR
    ========================================================================== */
 
-@mixin set-color($name, $color) {
+@mixin color($name, $color) {
   @if global-variable-exists(global-palette) {
     $global-palette: map-merge($global-palette, ($name: $color)) !global;
   } @else {
@@ -10,20 +10,20 @@
   }
 }
 
-@mixin set-palette($map) {
+@mixin palette($map) {
   @each $name, $color in $map {
-    @include set-color($name, $color);
+    @include color($name, $color);
   }
 }
 
 @mixin text-color($color: null, $important: null) {
   @if $important { $important: !important; }
-  color: get-color($color) $important;
+  color: color($color) $important;
 }
 
 @mixin background-color($color: null, $important: null) {
   @if $important { $important: !important; }
-  background-color: get-color($color) $important;
+  background-color: color($color) $important;
 }
 
 @function is-color($color) {
@@ -31,14 +31,14 @@
   @return false;
 }
 
-@function get-color($color) {
+@function color($color) {
   @if is-color($color) { @return map-get($global-palette, $color); }
 
   @if type-of($color) == "color" {
     @return $color;
-    @warn "Instead of calling get-color(#{$color}), you should just use the \
+    @warn "Instead of calling color(#{$color}), you should just use the \
       color itself or add it to the $global-palette with \
-      set-color(\"color-name-goes-here\": #{$color})";
+      color(\"color-name-goes-here\": #{$color})";
   }
 
   @error "Color `#{$color}` wasn't found in \

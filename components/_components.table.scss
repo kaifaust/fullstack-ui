@@ -9,10 +9,10 @@
   }
 
   tr {
-    border-bottom: 1px solid get-color("grey-300");
+    border-bottom: 1px solid color("grey-300");
 
     @at-root .c-table thead tr {
-      border-bottom: 1px solid get-color("grey-400");
+      border-bottom: 1px solid color("grey-400");
       background-color: white;
     }
   }

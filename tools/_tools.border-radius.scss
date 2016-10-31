@@ -2,7 +2,7 @@
    #BORDER-RADIUS
    ========================================================================== */
 
-@mixin set-radius($name, $radius) {
+@mixin radius($name, $radius) {
   @if global-variable-exists(global-radius) {
     $global-radius: map-merge($global-radius, ($name: $radius)) !global;
   } @else {
@@ -10,7 +10,7 @@
   }
 }
 
-@function get-radius($name: null) {
+@function radius($name: null) {
    @if is-radius($name) {
      @return map-get($global-radius, $name);
    }
@@ -27,7 +27,7 @@
 
 @mixin radius($radius: null) {
   @if is-radius($radius) {
-    border-radius: em(get-radius($radius));
+    border-radius: em(radius($radius));
   } @elseif type-of($radius) == "number" {
     border-radius: em($radius);
   } @else {

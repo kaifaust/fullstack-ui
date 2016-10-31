@@ -5,7 +5,7 @@
 /* In the BEM context, we call blocks `Components` */
 
 @mixin component($name) {
-  .#{get-namespace(component)}#{$name} {
+  .#{namespace(component)}#{$name} {
     @content;
   }
 }
