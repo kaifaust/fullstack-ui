@@ -2,45 +2,24 @@
    #COLOR
    ========================================================================== */
 
-@mixin color($name, $color) {
-  @if global-variable-exists(global-palette) {
-    $global-palette: map-merge($global-palette, ($name: $color)) !global;
-  } @else {
-    $global-palette: ($name: $color) !global;
-  }
-}
+$global-palette: ();
 
-@mixin palette($map) {
-  @each $name, $color in $map {
-    @include color($name, $color);
-  }
-}
-
-@mixin text-color($color: null, $important: null) {
-  @if $important { $important: !important; }
-  color: color($color) $important;
-}
-
-@mixin background-color($color: null, $important: null) {
-  @if $important { $important: !important; }
-  background-color: color($color) $important;
-}
-
-@function is-color($color) {
-  @if map-has-key($global-palette, $color) { @return true; }
-  @return false;
+@mixin color($color) {
+  $global-palette: map-merge(
+    $global-palette,
+    $color
+  )
+  !global;
 }
 
 @function color($color) {
-  @if is-color($color) { @return map-get($global-palette, $color); }
-
-  @if type-of($color) == "color" {
-    @return $color;
-    @warn "Instead of calling color(#{$color}), you should just use the \
-      color itself or add it to the $global-palette with \
-      color(\"color-name-goes-here\": #{$color})";
+  @if map-has-key($global-palette, $color) {
+    @return map-get($global-palette, $color);
   }
+}
 
-  @error "Color `#{$color}` wasn't found in \
-    $global-palette: #{inspect($global-palette)}";
+@mixin palette($palette) {
+  @each $name, $color in $palette {
+    @include color(($name: $color));
+  }
 }

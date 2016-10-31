@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #COLOR
+   ========================================================================== */
+
+@mixin text-color($color: null, $important: null) {
+  @if $important {
+    $important: !important;
+  }
+  color: color($color) $important;
+}
+
+@mixin background-color($color: null, $important: null) {
+  @if $important {
+    $important: !important;
+  }
+  background-color: color($color) $important;
+}
