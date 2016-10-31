@@ -17,80 +17,84 @@
   Flex Grow
   Flex Shrink
   Flex Basis
-  Inline Flex
+  Order
 */
 
+$flex-utility-states: hover focus active !default;
+$flex-utility-responsive: true !default;
+
+$_sep: class-separator(modifier);
+
 $flex-utilities: (
-  'fasa'  : (align-self, auto),
-  'fass'  : (align-self, flex-start),
-  'fasc'  : (align-self, center),
-  'fase'  : (align-self, flex-end),
-  'fasb'  : (align-self, baseline),
-  'fasstr': (align-self, stretch),
+  'align-self#{$_sep}auto'    : (align-self, auto),
+  'align-self#{$_sep}start'   : (align-self, flex-start),
+  'align-self#{$_sep}center'  : (align-self, center),
+  'align-self#{$_sep}end'     : (align-self, flex-end),
+  'align-self#{$_sep}baseline': (align-self, baseline),
+  'align-self#{$_sep}stretch' : (align-self, stretch),
+  'align-self#{$_sep}inherit' : (align-self, inherit),
 
-  'fais'  : (align-items, flex-start),
-  'faic'  : (align-items, center),
-  'faie'  : (align-items, flex-end),
-  'faib'  : (align-items, baseline),
-  'faistr': (align-items, stretch),
+  'align-items#{$_sep}start'   : (align-items, flex-start),
+  'align-items#{$_sep}center'  : (align-items, center),
+  'align-items#{$_sep}end'     : (align-items, flex-end),
+  'align-items#{$_sep}baseline': (align-items, baseline),
+  'align-items#{$_sep}stretch' : (align-items, stretch),
+  'align-items#{$_sep}inherit' : (align-items, inherit),
 
-  'facs'  : (align-content, flex-start),
-  'facc'  : (align-content, center),
-  'face'  : (align-content, flex-end),
-  'facsb' : (align-content, space-between),
-  'facsa' : (align-content, space-around),
-  'facstr': (align-content, stretch),
+  'align-content#{$_sep}start'        : (align-content, flex-start),
+  'align-content#{$_sep}center'       : (align-content, center),
+  'align-content#{$_sep}end'          : (align-content, flex-end),
+  'align-content#{$_sep}space-between': (align-content, space-between),
+  'align-content#{$_sep}space-around' : (align-content, space-around),
+  'align-content#{$_sep}stretch'      : (align-content, stretch),
+  'align-content#{$_sep}inherit'      : (align-content, inherit),
 
-  'fjs'   : (justify-content, flex-start),
-  'fjc'   : (justify-content, center),
-  'fje'   : (justify-content, flex-end),
-  'fjsb'  : (justify-content, space-between),
-  'fjsa'  : (justify-content, space-around),
+  'justify-content#{$_sep}start'        : (justify-content, flex-start),
+  'justify-content#{$_sep}center'       : (justify-content, center),
+  'justify-content#{$_sep}end'          : (justify-content, flex-end),
+  'justify-content#{$_sep}space-between': (justify-content, space-between),
+  'justify-content#{$_sep}space-around' : (justify-content, space-around),
+  'justify-content#{$_sep}inherit'      : (justify-content, inherit),
 
-  'fwn'   : (flex-wrap, no-wrap),
-  'fw'    : (flex-wrap, wrap),
-  'fwr'   : (flex-wrap, wrap-reverse),
+  'flex-wrap#{$_sep}no-wrap': (flex-wrap, nowrap),
+  'flex-wrap#{$_sep}wrap'   : (flex-wrap, wrap),
+  'flex-wrap#{$_sep}reverse': (flex-wrap, wrap-reverse),
+  'flex-wrap#{$_sep}inherit': (flex-wrap, inherit),
 
-  'fdr'   : (flex-direction, row),
-  'fdrr'  : (flex-direction, row-reverse),
-  'fdc'   : (flex-direction, column),
-  'fdcr'  : (flex-direction, column-reverse),
+  'flex-direction#{$_sep}row'           : (flex-direction, row),
+  'flex-direction#{$_sep}row-reverse'   : (flex-direction, row-reverse),
+  'flex-direction#{$_sep}column'        : (flex-direction, column),
+  'flex-direction#{$_sep}column-reverse': (flex-direction, column-reverse),
+  'flex-direction#{$_sep}inherit'       : (flex-direction, inherit),
 
-  'fg'    : (flex-grow, 1),
-  'fg0'   : (flex-grow, 0),
+  'flex-grow'         : (flex-grow, 1 1 0%),
+  'flex-grow#{$_sep}0': (flex-grow, 0),
+  'flex-grow#{$_sep}2': (flex-grow, 2 1 0%),
+  'flex-grow#{$_sep}3': (flex-grow, 3 1 0%),
+  'flex-grow#{$_sep}4': (flex-grow, 4 1 0%),
+  'flex-grow#{$_sep}5': (flex-grow, 5 1 0%),
 
-  'fs'    : (flex-shrink, 1),
-  'fs0'   : (flex-shrink, 0),
+  'flex-shrink'         : (flex-shrink, 1),
+  'flex-shrink#{$_sep}0': (flex-shrink, 0),
 
-  'fba'   : (flex-basis, auto),
-  'fb0'   : (flex-basis, 0),
-  'fb'    : (flex-basis, 100%),
+  'flex-basis#{$_sep}auto': (flex-basis, auto),
+  'flex-basis#{$_sep}0'   : (flex-basis, 0),
+  'flex-basis#{$_sep}100' : (flex-basis, 100%),
+
+  'order#{$_sep}first': (order, -1),
+  'order#{$_sep}last': (order, 1),
+  'order#{$_sep}none': (order, 0)
 );
 
-@mixin flex-utils($breakpoint: null) {
+@each $class, $value-map in $flex-utilities {
+  $declaration: nth($value-map, 1);
+  $declaration-value: nth($value-map, 2);
 
-  @each $class, $value-map in $flex-utilities {
-
-    $declaration: nth($value-map, 1);
-    $declaration-value: nth($value-map, 2);
-
-    .u-#{$class}#{$breakpoint} {
-      #{$declaration}: #{$declaration-value} !important;
-    }
-
-  }
-
-}
-
-@include flex-utils();
-
-// Responsive variants
-@each $bp-name,
-      $bp-value
-      in $mq-breakpoints {
-
-  @include mq($from: $bp-name) {
-    @include flex-utils($breakpoint: \@#{$bp-name});
-  }
-
+  @include utility(
+    $name: "#{$class}",
+    $responsive: $flex-utility-responsive,
+    $states: $flex-utility-states
+  ) {
+    #{$declaration}: #{$declaration-value} !important;
+  };
 }
