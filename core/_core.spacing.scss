@@ -2,157 +2,18 @@
    #SPACING
    ========================================================================== */
 
-/* BOX MODEL PROPERTIES */
+$global-spacing: ();
 
-$global-box-props: (
-  "margin",
-  "margin-top",
-  "margin-right",
-  "margin-bottom",
-  "margin-left",
-  "padding",
-  "padding-top",
-  "padding-right",
-  "padding-bottom",
-  "padding-left"
-);
-
-$global-box-directions: (
-  null: null,
-  "top": "-top",
-  "right": "-right",
-  "bottom": "-bottom",
-  "left": "-left",
-  "vertical": (
-    "-top",
-    "-bottom"
-  ),
-  "horizontal": (
-    "-right",
-    "-left"
+@mixin spacing($spacing) {
+  $global-spacing: map-merge(
+    $global-spacing,
+    $spacing
   )
-);
-
-@function is-box-prop($arg) {
-  @each $prop in $global-box-props {
-    @if $arg == $prop {
-      @return true;
-    }
-  }
-  @return false;
-}
-
-@function box-prop($name) {
-  @if map-has-key($global-box-props, $name) {
-    @return map-get($global-box-props, $name);
-  }
-  @error "Box property `#{$name}` wasn't found in \
-    $global-box-props: #{inspect($global-box-props)}";
-}
-
-
-
-
-
-/* SPACING UNITS */
-
-@mixin spacing($name, $spacing) {
-  @if global-variable-exists(global-spacing) {
-    $global-spacing: map-merge($global-spacing, ($name: $spacing)) !global;
-  } @else {
-    $global-spacing: ($name, $spacing) !global;
-  }
+  !global;
 }
 
 @function spacing($name: null) {
-   @if map-has-key($global-spacing, $name) {
-     @return map-get($global-spacing, $name);
-   }
-   @error "Spacing unit `#{$name}` wasn't found in \
-     $global-spacing: #{inspect($global-spacing)}";
-}
-
-@function is-spacing($arg) {
-  @each $name, $value in $global-spacing {
-    @if $arg == $name {
-      @return true;
-    }
+  @if map-has-key($global-spacing, $name) {
+    @return map-get($global-spacing, $name);
   }
-  @return false;
 }
-
-@mixin _spacing($box-prop: null, $spacing: null) {
-  @if is-box-prop($box-prop) {
-    @if is-spacing($spacing) {
-      #{$box-prop}: spacing($spacing);
-    } @elseif type-of($spacing) == "number" {
-      #{$box-prop}: $spacing;
-    } @else {
-      @error "Spacing unit `#{$spacing}` wasn't found in \
-      $global-spacing, nor was it a valid unit";
-    }
-  } @else {
-    @error "Box property `#{$box-prop}` wasn't found in \
-      $global-box-props: #{inspect($global-box-props)}";
-  }
-};
-
-@mixin margin($spacing: null) {
-  @include _spacing(margin, $spacing);
-};
-
-@mixin margin-vertical($spacing: null) {
-  @include _spacing(margin-top, $spacing);
-  @include _spacing(margin-bottom, $spacing);
-};
-
-@mixin margin-horizontal($spacing: null) {
-  @include _spacing(margin-left, $spacing);
-  @include _spacing(margin-right, $spacing);
-};
-
-@mixin margin-top($spacing: null) {
-  @include _spacing(margin-top, $spacing);
-};
-
-@mixin margin-right($spacing: null) {
-  @include _spacing(margin-right, $spacing);
-};
-
-@mixin margin-bottom($spacing: null) {
-  @include _spacing(margin-bottom, $spacing);
-};
-
-@mixin margin-left($spacing: null) {
-  @include _spacing(margin-left, $spacing);
-};
-
-@mixin padding($spacing: null) {
-  @include _spacing(padding, $spacing);
-};
-
-@mixin padding-vertical($spacing: null) {
-  @include _spacing(padding-top, $spacing);
-  @include _spacing(padding-bottom, $spacing);
-};
-
-@mixin padding-horizontal($spacing: null) {
-  @include _spacing(padding-left, $spacing);
-  @include _spacing(padding-right, $spacing);
-};
-
-@mixin padding-top($spacing: null) {
-  @include _spacing(padding-top, $spacing);
-};
-
-@mixin padding-right($spacing: null) {
-  @include _spacing(padding-right, $spacing);
-};
-
-@mixin padding-bottom($spacing: null) {
-  @include _spacing(padding-bottom, $spacing);
-};
-
-@mixin padding-left($spacing: null) {
-  @include _spacing(padding-left, $spacing);
-};

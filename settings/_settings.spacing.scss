@@ -2,12 +2,13 @@
    #SPACING
    ========================================================================== */
 
-$global-spacing: (
-   null:   round($global-line-height),
-  "nano":  round($global-line-height * 0.125),
+@include spacing((
+  null   : round($global-line-height),
+  "none" : 0px,
+  "nano" : round($global-line-height * 0.125),
   "micro": round($global-line-height * 0.25),
-  "tiny":  round($global-line-height * 0.5),
+  "tiny" : round($global-line-height * 0.5),
   "small": round($global-line-height * 0.75),
   "large": round($global-line-height * 1.5),
-  "huge":  round($global-line-height * 2),
-);
+  "huge" : round($global-line-height * 2),
+));

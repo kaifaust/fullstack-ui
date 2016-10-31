@@ -1,0 +1,71 @@
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+
+@mixin _spacing($spacing-prop: null, $spacing: null) {
+  @if map-has-key($global-spacing, $spacing) {
+    #{$spacing-prop}: spacing($spacing);
+  } @elseif type-of($spacing) == "number" {
+    #{$spacing-prop}: $spacing;
+  }
+};
+
+@mixin margin($spacing: null) {
+  @include _spacing(margin, $spacing);
+};
+
+@mixin margin-vertical($spacing: null) {
+  @include _spacing(margin-top, $spacing);
+  @include _spacing(margin-bottom, $spacing);
+};
+
+@mixin margin-horizontal($spacing: null) {
+  @include _spacing(margin-left, $spacing);
+  @include _spacing(margin-right, $spacing);
+};
+
+@mixin margin-top($spacing: null) {
+  @include _spacing(margin-top, $spacing);
+};
+
+@mixin margin-right($spacing: null) {
+  @include _spacing(margin-right, $spacing);
+};
+
+@mixin margin-bottom($spacing: null) {
+  @include _spacing(margin-bottom, $spacing);
+};
+
+@mixin margin-left($spacing: null) {
+  @include _spacing(margin-left, $spacing);
+};
+
+@mixin padding($spacing: null) {
+  @include _spacing(padding, $spacing);
+};
+
+@mixin padding-vertical($spacing: null) {
+  @include _spacing(padding-top, $spacing);
+  @include _spacing(padding-bottom, $spacing);
+};
+
+@mixin padding-horizontal($spacing: null) {
+  @include _spacing(padding-left, $spacing);
+  @include _spacing(padding-right, $spacing);
+};
+
+@mixin padding-top($spacing: null) {
+  @include _spacing(padding-top, $spacing);
+};
+
+@mixin padding-right($spacing: null) {
+  @include _spacing(padding-right, $spacing);
+};
+
+@mixin padding-bottom($spacing: null) {
+  @include _spacing(padding-bottom, $spacing);
+};
+
+@mixin padding-left($spacing: null) {
+  @include _spacing(padding-left, $spacing);
+};

@@ -5,42 +5,64 @@
 /**
  * Generates classes like
  *
- *   .u-margin-small@mobile {}
- *   .u-margin-top-large@tablet {}
- *   .u-margin-horizontal-micro {}
+ *   .u-margin--small@mobile {}
+ *   .u-margin-top--large@tablet {}
+ *   .u-margin-horizontal--micro {}
  *   .u-padding-none {}
  */
 
-$build-responsive-spacing-variants: true !default;
+$_spacing-props: (
+  "margin",
+  "margin-top",
+  "margin-right",
+  "margin-bottom",
+  "margin-left",
+  "padding",
+  "padding-top",
+  "padding-right",
+  "padding-bottom",
+  "padding-left"
+);
 
-@mixin build-spacing-classes($breakpoint: null) {
-  @each $box-prop in "margin", "padding" {
-    @each $direction-name, $direction-values in $global-box-directions {
-      @if $direction-name != null {
-        $direction-name: unquote("-#{$direction-name}");
-      }
+$_spacing-directions: (
+  null: null,
+  "top": "-top",
+  "right": "-right",
+  "bottom": "-bottom",
+  "left": "-left",
+  "vertical": (
+    "-top",
+    "-bottom"
+  ),
+  "horizontal": (
+    "-right",
+    "-left"
+  )
+);
 
-      @each $spacing-name, $spacing-value in $global-spacing {
-        @if $spacing-name != null {
-          $spacing-name: unquote("-#{$spacing-name}");
-        }
+$spacing-utility-states: () !default;
+$spacing-utility-responsive: true !default;
 
-        @each $direction-value in $direction-values {
-          .u-#{$box-prop}#{$direction-name}#{$spacing-name}#{$breakpoint} {
-            #{$box-prop}#{$direction-value}: em($spacing-value) !important;
-          }
-        }
-      }
+@each $spacing-type in "margin", "padding" {
+  @each $direction-name, $direction-values in $_spacing-directions {
+    @if $direction-name != null {
+      $direction-name: unquote("-#{$direction-name}");
     }
-  }
-};
 
-@include build-spacing-classes;
+    @each $spacing-name, $spacing-value in $global-spacing {
+      @if $spacing-name != null {
+        $spacing-name: unquote("#{class-separator(modifier)}#{$spacing-name}");
+      }
 
-@if $build-responsive-spacing-variants == true {
-  @each $bp-name, $bp-value in $mq-breakpoints {
-    @include mq($from: $bp-name) {
-      @include build-spacing-classes($breakpoint: \@#{$bp-name});
+      @each $direction-value in $direction-values {
+        @include utility(
+          $name: "#{$spacing-type}#{$direction-name}#{$spacing-name}",
+          $responsive: $spacing-utility-responsive,
+          $states: $spacing-utility-states
+        ) {
+          #{$spacing-type}#{$direction-value}: $spacing-value !important;
+        };
+      }
     }
   }
 }
