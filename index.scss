@@ -8,10 +8,8 @@ CONTENT
 
   CORE:         Framework core
   TOOLS:        Mixins and functions
-  SETTINGS:     Global variables, site-wide settings
-  PALETTES:     The place to import sets of color
-  GENERIC:      Low-specificity, far-reaching rulesets (e.g. resets)
-  ELEMENTS:     Unclassed HTML elements (e.g. a {}, blockquote {}, address {})
+  SETTINGS:     Site-wide settings
+  GENERIC:      Low-specificity, far-reaching rulesets and classless elements
   OBJECTS:      Objects, abstractions, and design patterns (e.g. .media {})
   COMPONENTS:   Discrete, complete chunks of UI (e.g. .carousel {})
   UTILITIES:    High-specificity, very explicit selectors. Overrides and helper
@@ -80,17 +78,9 @@ CONTENT
 @import "settings/settings.typography";
 @import "settings/settings.spacing";
 @import "settings/settings.color";
+@import "settings/settings.color.google-material";
 @import "settings/settings.transition";
 @import "settings/settings.border-radius";
-
-
-
-
-
-// PALETTES
-
-@import "palettes/palettes.google-material";
-@include palette($palette-google-material);
 
 
 

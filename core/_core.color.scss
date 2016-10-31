@@ -17,9 +17,3 @@ $global-palette: ();
     @return map-get($global-palette, $color);
   }
 }
-
-@mixin palette($palette) {
-  @each $name, $color in $palette {
-    @include color(($name: $color));
-  }
-}
