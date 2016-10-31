@@ -1,0 +1,39 @@
+/* ==========================================================================
+   #MAP
+   ========================================================================== */
+
+/*
+  Deep Map Set/Get
+
+  Sass doesn't come with recursive map get/set functions, so we provide them as
+  framework functions
+*/
+
+/*
+  GET
+  Source: https://css-tricks.com/snippets/sass/deep-getset-maps/
+*/
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+/*
+  SET
+  Source: https://gist.github.com/pentzzsolt/4949bbd7691d43d00616dc4f1451cae9#file-non-destructive-map-merge-4-scss
+*/
+
+@function map-deep-set($parent-map, $child-map) {
+  $result: $parent-map;
+  @each $key, $value in $child-map {
+    @if (not map-has-key($result, $key)) or (type-of(map-get($result, $key)) != type-of($value)) or (not (type-of(map-get($result, $key)) == map and type-of($value) == map)) {
+      $result: map-merge($result, ($key: $value));
+    }
+    @else {
+      $result: map-merge($result, ($key: map-deep-set(map-get($result, $key), $value)));
+    }
+  }
+  @return $result;
+}
