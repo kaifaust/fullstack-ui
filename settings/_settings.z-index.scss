@@ -2,4 +2,25 @@
    #Z-INDEX
    ========================================================================== */
 
-$global-z-index: () !default;
+/*
+  Sets a global z-index value.
+  Intended to be the sole source of all z values.
+
+  Basic example:
+
+  @include z((
+    ".c-notification": 2,
+    ".c-notification__message": 1
+  ));
+
+  .c-notification {
+    z-index: z(#{&}); // returns 2
+
+    &__message {
+      z-index: z(#{&}); // returns 1
+    }
+  }
+
+*/
+
+@include z(());
