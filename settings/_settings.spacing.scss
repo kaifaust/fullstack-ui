@@ -2,13 +2,15 @@
    #SPACING
    ========================================================================== */
 
+$_base-spacing: line-height();
+
 @include spacing((
-  null   : round($global-line-height),
+  null   : round($_base-spacing),
   "none" : 0px,
-  "nano" : round($global-line-height * 0.125),
-  "micro": round($global-line-height * 0.25),
-  "tiny" : round($global-line-height * 0.5),
-  "small": round($global-line-height * 0.75),
-  "large": round($global-line-height * 1.5),
-  "huge" : round($global-line-height * 2),
+  "nano" : round($_base-spacing * 0.125),
+  "micro": round($_base-spacing * 0.25),
+  "tiny" : round($_base-spacing * 0.5),
+  "small": round($_base-spacing * 0.75),
+  "large": round($_base-spacing * 1.5),
+  "huge" : round($_base-spacing * 2),
 ));

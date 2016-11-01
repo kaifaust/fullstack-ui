@@ -5,16 +5,11 @@
 .c-input {
   @include padding(halve(spacing()));
 
-
-  @each $name, $value in $global-spacing {
+  @each $name, $spacing in $global-spacing {
     @if $name != null {
       &--#{$name} {
         @include padding-vertical(
-          halve(
-            em(
-              spacing($name)
-            )
-          )
+          halve($spacing)
         );
       }
     }

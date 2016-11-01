@@ -1,28 +1,12 @@
-// 1. Fill up the entire browser by default (opinionated).
-// See: http://stackoverflow.com/questions/17555682/height-100-or-min-height-100-for-html-and-body-elements
-
-html {
-  height: 100%; /* 1 */
-}
-
-body {
-  min-height: 100%; /* 1 */
-}
-
-
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 
 /**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
+ * 1. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 
 html {
-  font-family: $global-font-family, sans-serif; /* 1 */
-  line-height: 1.5; /* 2 */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
+  -ms-text-size-adjust: 100%; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 1 */
 }
 
 /**

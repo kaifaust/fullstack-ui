@@ -3,7 +3,7 @@
    ========================================================================== */
 
 @mixin label() {
-  @include font-size($global-font-size-small);
+  @include font(small);
   letter-spacing: rem(0.75px);
   font-weight: 500;
   text-transform: uppercase;

@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #TYPOGRAPHY
+   ========================================================================== */
+
+$global-typography: ();
+
+@mixin typography($typography) {
+  $global-typography: map-merge(
+    $global-typography,
+    $typography
+  )
+  !global;
+}
+
+@function typography($typography) {
+  @return map-get($global-typography, $typography);
+}

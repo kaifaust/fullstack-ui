@@ -1,0 +1,108 @@
+/* ==========================================================================
+   #FONT
+   ========================================================================== */
+
+/*
+  Get all or one style declaration from any declared font style
+
+  Example:
+  .my-class {
+    @include font(display-1);
+  }
+*/
+
+@mixin font($name: null, $prop: null) {
+  @if $prop != null {
+    @each $value in map-deep-get($global-typography, $name, $prop) {
+      #{$prop}: #{$value};
+    }
+  } @else {
+    @each $prop, $value in map-get($global-typography, $name) {
+      #{$prop}: #{$value};
+    }
+  }
+}
+
+/*
+  Get property from any declared font style
+
+  Example:
+  .my-class {
+    font-size: font(display-1, font-size);
+  }
+*/
+
+@function font($name, $prop) {
+  @return map-deep-get($global-typography, $name, $prop);
+}
+
+
+/*
+  Font function shortcuts for common text properties
+
+  Example:
+  .my-class {
+    font-size: font-size(display-1);
+  }
+*/
+
+
+@function font-family($name: null) {
+  @return font($name, font-family);
+}
+
+@function font-size($name: null) {
+  @return font($name, font-size);
+}
+
+@function font-weight($name: null) {
+  @return font($name, font-weight);
+}
+
+@function line-height($name: null) {
+  @return font($name, line-height);
+}
+
+@function font-opacity($name: null) {
+  @return font($name, opacity);
+}
+
+@function font-style($name: null) {
+  @return font($name, font-style);
+}
+
+@function text-transform($name: null) {
+  @return font($name, text-transform);
+}
+
+@function letter-spacing($name: null) {
+  @return font($name, letter-spacing);
+}
+
+@function text-decoration($name: null) {
+  @return font($name, text-decoration);
+}
+
+@function text-indent($name: null) {
+  @return font($name, text-indent);
+}
+
+@function text-direction($name: null) {
+  @return font($name, text-direction);
+}
+
+@function word-spacing($name: null) {
+  @return font($name, word-spacing);
+}
+
+@function white-space($name: null) {
+  @return font($name, white-space);
+}
+
+@function vertical-align($name: null) {
+  @return font($name, vertical-align);
+}
+
+@function font-color($name: null) {
+  @return font($name, color);
+}

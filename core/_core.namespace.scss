@@ -4,13 +4,7 @@
 
 /* Values declared in settings */
 
-$global-namespaces: (
-  component: "c#{class-separator(prefix)}",
-  utility: "u#{class-separator(prefix)}",
-  object: "o#{class-separator(prefix)}",
-  state: "is#{class-separator(prefix)}",
-  content-state: "has#{class-separator(prefix)}"
-);
+$global-namespaces: ();
 
 @mixin namespace($name) {
   $global-namespaces: map-merge(

@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+/*
+  1. Set font settings here to have everything else inherit from it.
+  2. Fill up the entire browser by default
+     See: http://stackoverflow.com/questions/17555682/height-100-or-min-height-100-for-html-and-body-elements
+  3. Remove the margin in all browsers
+*/
+
+html {
+  @include font;
+  height: 100%; /* 1 */
+}
+
+body {
+  margin: 0; /* 2 */
+  min-height: 100%; /* 1 */
+}

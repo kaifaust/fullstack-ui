@@ -30,15 +30,15 @@ CONTENT
 @import "core/core.unit-conversion";
 @import "core/core.css-props";
 @import "core/core.class-separators";
-@import "core/core.pseudo-classes";
 @import "core/core.namespace";
+@import "core/core.pseudo-classes";
 @import "core/core.utility";
 @import "core/core.component";
 @import "core/core.element";
 @import "core/core.modifier";
 @import "core/core.state";
 @import "core/core.color";
-@import "core/core.font-size";
+@import "core/core.typography";
 @import "core/core.media-query";
 @import "core/core.spacing";
 @import "core/core.radius";
@@ -59,6 +59,7 @@ CONTENT
 @import "tools/tools.hidden";
 @import "tools/tools.highlight";
 @import "tools/tools.label";
+@import "tools/tools.font";
 @import "tools/tools.shadow-border";
 
 
@@ -68,8 +69,8 @@ CONTENT
 // SETTINGS
 
 @import "settings/settings.core";
-@import "settings/settings.namespace";
 @import "settings/settings.class-separators";
+@import "settings/settings.namespace";
 @import "settings/settings.pseudo-classes";
 @include pseudo-class((css-props:
   hover active focus disabled enabled
@@ -91,6 +92,7 @@ CONTENT
 @import "generic/generic.box-sizing";
 @import "generic/generic.normalize";
 @import "generic/generic.reset";
+@import "generic/generic.page";
 @import "generic/generic.headings";
 @import "generic/generic.tables";
 @import "generic/generic.inputs";
@@ -135,7 +137,6 @@ CONTENT
 @import "utilities/utilities.css-props";
 @import "utilities/utilities.display";
 @import "utilities/utilities.hidden";
-@import "utilities/utilities.font-size";
 @import "utilities/utilities.color";
 @import "utilities/utilities.typography";
 @import "utilities/utilities.spacing";

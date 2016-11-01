@@ -5,7 +5,7 @@
 /* REM */
 
 @function rem($pixel-value) {
-  @return $pixel-value / $global-font-size * 1rem;
+  @return $pixel-value / font-size() * 1rem;
 }
 
 @mixin rem($property, $value) {
@@ -16,7 +16,7 @@
 /* EM */
 
 @function em($pixel-value) {
-  @return $pixel-value / $global-font-size * 1em;
+  @return $pixel-value / font-size() * 1em;
 }
 
 @mixin em($property, $value) {

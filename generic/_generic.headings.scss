@@ -2,26 +2,9 @@
    #HEADINGS
    ========================================================================== */
 
-h1 {
-  @include font-size($global-font-size-h1);
-}
-
-h2 {
-  @include font-size($global-font-size-h2);
-}
-
-h3 {
-  @include font-size($global-font-size-h3);
-}
-
-h4 {
-  @include font-size($global-font-size-h4);
-}
-
-h5 {
-  @include font-size($global-font-size);
-}
-
-h6 {
-  @include font-size($global-font-size);
-}
+h1 { @include font(#{&}); }
+h2 { @include font(#{&}); }
+h3 { @include font(#{&}); }
+h4 { @include font(#{&}); }
+h5 { @include font(#{&}); }
+h6 { @include font(#{&}); }

@@ -1,108 +1,18 @@
 /* ==========================================================================
    #TYPOGRAPHY
    ========================================================================== */
+   $font-utility-states: hover focus active visited !default;
+   $font-utility-responsive: true !default;
 
-.u-text-right {
-  text-align: right !important;
-}
-
-.u-text-left {
-  text-align: left !important;
-}
-
-.u-text-center {
-  text-align: center !important;
-}
-
-
-
-
-
-/* Vertical Alignment
-
-  NOTE: This property does not allow you to "vertically center" an element
-  within another element. Flexbox is more of the proper tool there.
-*/
-
-$vertical-align-props: (
-  baseline,
-  sub,
-  super,
-  top,
-  text-top,
-  middle,
-  bottom,
-  text-bottom
-);
-
-@each $prop in $vertical-align-props {
-  .u-vertical-#{$prop} {
-    vertical-align: $prop !important;
-  }
-}
-
-
-
-
-
-/* Text Transformations */
-
-.u-uppercase {
-  text-transform: uppercase !important;
-}
-
-.u-capitalize {
-  text-transform: capitalize !important;
-}
-
-.u-lowercase {
-  text-transform: lowercase !important;
-}
-
-
-
-
-
-/* Line Height */
-
-.u-line-height-base {
-  line-height: 1 !important;
-}
-
-.u-line-height-none {
-  line-height: 0 !important;
-}
-
-.u-line-height-auto {
-  line-height: auto !important;
-}
-
-
-
-
-
-/* Font Weight */
-
-.u-weight-thin {
-  font-weight: 100;
-}
-
-.u-weight-light {
-  font-weight: 300;
-}
-
-.u-weight-regular {
-  font-weight: 400;
-}
-
-.u-weight-medium {
-  font-weight: 500;
-}
-
-.u-weight-bold {
-  font-weight: 700;
-}
-
-.u-weight-black {
-  font-weight: 900;
-}
+   // Build background color utility classes
+   @each $font, $value in $global-typography {
+     @if $font != null {
+       @include utility(
+         $name: "font#{class-separator(modifier)}#{$font}",
+         $responsive: $font-utility-responsive,
+         $states: $font-utility-states
+       ) {
+         @include font($font);
+       }
+     }
+   }
