@@ -5,9 +5,9 @@
 /* Sets $global-namespaces */
 
 @include namespace((
-  component: "c-",
-  utility: "u-",
-  object: "o-",
-  state: "is-",
-  content-state: "has-"
+  component: "c#{class-separator(prefix)}",
+  utility: "u#{class-separator(prefix)}",
+  object: "o#{class-separator(prefix)}",
+  state: "is#{class-separator(prefix)}",
+  content-state: "has#{class-separator(prefix)}"
 ));
