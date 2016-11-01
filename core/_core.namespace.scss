@@ -4,7 +4,13 @@
 
 /* Values declared in settings */
 
-$global-namespaces: ();
+$global-namespaces: (
+  component: "c-",
+  utility: "u-",
+  object: "o-",
+  state: "is-",
+  content-state: "has-"
+);
 
 @mixin namespace($name) {
   $global-namespaces: map-merge(
