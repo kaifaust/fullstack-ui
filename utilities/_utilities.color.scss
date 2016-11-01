@@ -6,7 +6,7 @@ $color-utility-states: hover focus active visited !default;
 $color-utility-responsive: true !default;
 
 // Build background color utility classes
-@each $color, $rgb in $global-palette {
+@each $color, $rgb in $global-colors {
   @include utility(
     $name: "color--#{$color}",
     $responsive: $color-utility-responsive,

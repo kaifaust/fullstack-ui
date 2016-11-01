@@ -3,7 +3,7 @@
    ========================================================================== */
 
 @mixin build-css-prop-utilities($breakpoint: null, $pseudo-class: '') {
-  @each $prop, $prop-values in $css-props {
+  @each $prop, $prop-values in $global-css-props {
     @each $value in $prop-values {
       .u-#{$prop}--#{$value}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} {
         #{$prop}: #{$value} !important;

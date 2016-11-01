@@ -71,7 +71,7 @@ CONTENT
 @import "settings/settings.namespace";
 @import "settings/settings.class-separators";
 @import "settings/settings.pseudo-classes";
-@include pseudo-class(css-props, (
+@include pseudo-class((css-props:
   hover active focus disabled enabled
 ));
 

@@ -2,13 +2,15 @@
    #CSS-PROPERTIES
    ========================================================================== */
 
+$global-css-props: ();
+
 @function css-prop($prop) {
-  @return map-get($css-props, $prop);
+  @return map-get($global-css-props, $prop);
 }
 
 @mixin css-prop($prop) {
-  $css-props: map-merge(
-    $css-props,
+  $global-css-props: map-merge(
+    $global-css-props,
     $prop
   )
   !global;

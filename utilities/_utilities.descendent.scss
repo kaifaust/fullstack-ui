@@ -4,7 +4,7 @@
 
 /*
 
-.u-descendent-* uses $css-props, $pseudo-classes and $mq-breakpoints to generate
+.u-descendent-* uses $global-css-props, $global-pseudo-classes and $mq-breakpoints to generate
 class pairs like:
 
   .u-descendent-visibility--visible:hover@desktop
@@ -38,7 +38,7 @@ revealed when the user hovers over a row. Here's how that might look:
 
 
 @mixin build-descendent-utilities($breakpoint: null, $pseudo-class: '') {
-  @each $prop, $prop-values in $css-props {
+  @each $prop, $prop-values in $global-css-props {
     @each $value in $prop-values {
       .u-descendent-#{$prop}__target {
         .u-descendent-#{$prop}--#{$value}#{$pseudo-class}#{$breakpoint}#{str-replace($pseudo-class, "\\")} & {

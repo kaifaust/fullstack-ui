@@ -2,18 +2,18 @@
    #COLOR
    ========================================================================== */
 
-$global-palette: ();
+$global-colors: ();
 
 @mixin color($color) {
-  $global-palette: map-merge(
-    $global-palette,
+  $global-colors: map-merge(
+    $global-colors,
     $color
   )
   !global;
 }
 
 @function color($color) {
-  @if map-has-key($global-palette, $color) {
-    @return map-get($global-palette, $color);
+  @if map-has-key($global-colors, $color) {
+    @return map-get($global-colors, $color);
   }
 }

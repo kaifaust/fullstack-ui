@@ -2,10 +2,16 @@
    #PSEUDO-CLASSES
    ========================================================================== */
 
+$global-pseudo-classes: ();
+
 @function pseudo-class($pseudo-class: ()) {
-  @return map-get($pseudo-classes, $pseudo-class);
+  @return map-get($global-pseudo-classes, $pseudo-class);
 }
 
-@mixin pseudo-class($name, $class) {
-  $pseudo-classes: map-merge($pseudo-classes, ($name: $class)) !global;
+@mixin pseudo-class($pseudo-class) {
+  $global-pseudo-classes: map-merge(
+    $global-pseudo-classes,
+    $pseudo-class
+  )
+  !global;
 };
