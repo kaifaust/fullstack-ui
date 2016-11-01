@@ -1,12 +1,18 @@
 ![FullStack UI](logo-fullstack-ui.png)
 
-This project is under active development and is not recommended for production use at this time.
-
 ## What is FullStack UI?
-FullStack UI is a fork of InuitCSS maintained by FullStack Labs. It builds on the some of the core architectural principles of InuitCSS and introduces new paradigms that allow for greater extensibility and scalability.
+FullStack UI is a SCSS framework built to make front end UI development fast and scalable. This project is under active development and is not recommended for production use at this time.
 
-## Goal
-FullStack UI is our answer to the challenges we faced in our software consultancy. We needed the ability to start and complete projects quickly while keeping the codebase scalable. We wanted something as easy to get started with as Bootstrap, as themeable as Semantic UI and as dynamic as InuitCSS.
+## Architecture
+
+* **CORE**: Framework core
+* **TOOLS**: Mixins and functions
+* **SETTINGS**: Site-wide settings
+* **GENERIC**: Low-specificity, far-reaching rulesets and classless elements
+* **OBJECTS**: Objects, abstractions, and design patterns (e.g. .media {})
+* **COMPONENTS**: Discrete, complete chunks of UI (e.g. .carousel {})
+* **UTILITIES**: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .u-hidden {})
+
 
 ## Getting Started
 The best way to start using FullStack UI is with NPM.
@@ -56,84 +62,7 @@ $ npm run watch:css
 
 Don't forget to `<link>` `index.css` in your project's `<head>` and you're ready to roll!
 
-## Architecture
-FullStack UI's killer feature is its generative qualities. It utilizes structured data (maps) and initializers (mixins) to generate classes and styles. This strategy allows you to build on the framework in a truly scalable way. To get the most out of this framework, you'll want to familiarize yourself with the following concepts.
+---
 
-### Tools
-Tools are Mixins and Functions that will help us build our UI.
-
-#### Color
-`$global-palette`'s values can be added to or overwritten with `set-color($id, $color)`:
-```
-@include set-color("primary", #BADA55);
-```
-
-Sometimes it's helpful to apply a whole palette to `$global-palette`. You can do this with:
-```
-@include set-palette($palette-google-material);
-```
-
-#### Spacing
-`$global-spacing` contains our app's single source of spacing units. Its default values are based on sensible sizes that make vertical rhythm easy:
-```
-$global-spacing: (
-   null:   round($global-line-height),
-  "nano":  round($global-line-height * 0.125),
-  "micro": round($global-line-height * 0.25),
-  "tiny":  round($global-line-height * 0.5),
-  "small": round($global-line-height * 0.75),
-  "large": round($global-line-height * 1.5),
-  "huge":  round($global-line-height * 2),
-) !default;
-```
-
-You can add or override these with `set-spacing($name, $spacing)`:
-```
-@include set-spacing("my-custom-spacing-unit": 100px);
-```
-This will automatically be converted to relative units.
-
-#### Debug
-Sometimes its helpful to display the value of a variable at a specific point in compilation. For example, if you'd like to see what's in `$global-palette`.
-```
-@include debug($global-palette);
-```
-This embeds a pseudo element on `<body>` that includes the variable's value.
-
-
-### Palettes
-A **Palette** is a Sass map with with one or more key-value pairs. FullStack UI comes with a default palette that will provide a minimal but effective supply of ready-to-go colors. This gets applied to the `$global-palette` which acts as our single source of our app's colors.
-```
-$global-palette: (
-  "primary"   : rgb(33,150,243),
-  "secondary" : rgb(39,49,68),
-  "success"   : rgb(76,175,80),
-  "alert"     : rgb(244,67,54),
-  ...
-);
-```
-
-**NOTE**: This will eventually fall under a higher-level `Themes` paradigm.
-
-
-# *The following topics will be covered soon...*
-
-
-### Settings
-
-
-
-
-### Generic
-
-
-### Elements
-
-
-### Objects
-
-
-### Components
-
-
-### Utilities
+### License
+MIT
