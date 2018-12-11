@@ -1,7 +1,7 @@
 ![FullStack UI](logo-fullstack-ui.png)
 
 ## What is FullStack UI?
-FullStack UI is a SCSS framework built to make front end UI development fast and scalable. This project is under active development and is not recommended for production use at this time.
+FullStack UI is a SCSS framework built to make front end UI development fast and scalable. This project is no longer in active development and is not recommended for production.
 
 ## Architecture
 
