@@ -1,4 +1,5 @@
 ![FullStack UI](logo-fullstack-ui.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkaifaust%2Ffullstack-ui.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkaifaust%2Ffullstack-ui?ref=badge_shield)
 
 ## What is FullStack UI?
 FullStack UI is a SCSS framework built to make front end UI development fast and scalable. This project is no longer in active development and is not recommended for production.
@@ -66,3 +67,6 @@ Don't forget to `<link>` `index.css` in your project's `<head>` and you're ready
 
 ### License
 MIT
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkaifaust%2Ffullstack-ui.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkaifaust%2Ffullstack-ui?ref=badge_large)
